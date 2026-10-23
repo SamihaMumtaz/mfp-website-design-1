@@ -476,9 +476,11 @@ body {
     transition: all 0.4s ease-in-out;
 }
 
-/* ========== MARQUEE ========== */
+/* ========== TRUSTED BY BRANDS (MARQUEE) ========== */
+
 .marquee {
     overflow: hidden;
+    /* Hides edges smoothly */
     mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
 }
@@ -486,15 +488,17 @@ body {
 .marquee-track {
     display: flex;
     align-items: center;
-    gap: 40px;
-    animation: marquee 32s linear infinite;
+    gap: 20px;
+    animation: marquee 35s linear infinite;
     width: max-content;
 }
 
+/* Pause animation on hover */
 .marquee:hover .marquee-track {
     animation-play-state: paused;
 }
 
+/* Reverse animation for second row */
 .marquee-track.brand-track-reverse {
     animation-direction: reverse;
 }
@@ -504,19 +508,46 @@ body {
     to { transform: translateX(-50%); }
 }
 
-.marquee-text {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, .85);
-    white-space: nowrap;
-    letter-spacing: -.5px;
+/* Brand Card Styling */
+.brand-card {
+    width: 140px;          /* Image ka width */
+    height: 80px;          /* Image ki height */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-.marquee-sep {
-    color: var(--brand);
-    font-size: 1.4rem;
-    transition: color .5s;
+/* Hover effect on logo */
+.brand-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2); /* Green glow */
+    border-color: var(--brand-light);
+}
+
+/* Images adjustment */
+.brand-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.brand-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .brand-card {
+        width: 110px;     /* Mobile par thoda chota */
+        height: 60px;
+        padding: 8px;
+    }
 }
 
 .brand-logo {
