@@ -183,86 +183,147 @@
         </div>
     </aside>
 
-    <!-- ============ HERO ============ -->
-    <section id="home" class="relative min-h-[92vh] overflow-hidden flex items-center">
-        <canvas id="particles" class="absolute inset-0 z-0"></canvas>
+    <!-- ============ PREMIUM HERO SECTION ============ -->
+<!-- Yahan min-h-screen hata diya hai taake mobile par extra space na aaye -->
+<section id="home" class="relative flex items-center justify-center overflow-hidden bg-brand-deep py-8 lg:py-20">
+    
+    <!-- Background Images Slider -->
+    <div class="hero-bg absolute inset-0 z-0">
+        <div class="slide active" style="background-image: url('images/plastic-packing.png')"></div>
+        <div class="slide" style="background-image: url('images/tissue-conversion.png')"></div>
+        <div class="slide" style="background-image: url('images/flexible-printing.png')"></div>
+        <div class="slide" style="background-image: url('images/roll-to-roll.png')"></div>
+        <div class="slide" style="background-image: url('images/laminated-tubes.png')"></div>
+        <div class="slide" style="background-image: url('images/offset-printing.jpg')"></div>
+    </div>
 
-        <div class="hero-bg absolute inset-0 z-0">
-            <div class="slide active"
-                style="background-image: url('https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1920&auto=format&fit=crop')">
+    <!-- Premium Overlay: Rich Gradient + Vignette -->
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-deep/90 via-brand-deep/60 to-brand-deep z-10"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(15,23,42,0.8)_100%)] z-10"></div>
+
+    <!-- Main Content Container -->
+    <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 relative z-20 w-full">
+        
+        <!-- Glassmorphism Content Wrapper -->
+        <div class="text-center text-white flex flex-col items-center justify-center backdrop-blur-md bg-white/5 p-5 sm:p-10 lg:p-14 rounded-3xl border border-white/10 shadow-2xl mx-auto max-w-4xl">
+            
+            <!-- Dynamic Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand/20 border border-brand/30 backdrop-blur-md mb-4 sm:mb-6">
+                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand animate-pulse"></span>
+                <span class="text-[9px] sm:text-sm font-bold tracking-widest text-brand-light uppercase">Premium Eco-Friendly</span>
             </div>
-            <div class="slide"
-                style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1920&auto=format&fit=crop')">
-            </div>
-            <div class="slide"
-                style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop')">
-            </div>
-        </div>
 
-        <div
-            class="absolute inset-0 bg-gradient-to-r from-brand-deep/95 via-brand-deep/70 to-transparent z-10 transition-theme">
-        </div>
+            <!-- Static Main Heading -->
+            <h1 class="font-display text-[1.7rem] leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl sm:leading-[1.1] font-extrabold mb-4 sm:mb-6 w-full drop-shadow-2xl">
+                <span class="block">Elevate Your Brand</span>
+                <span class="block mt-1 sm:mt-2">With <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">Eco-Friendly</span></span>
+                <span class="block mt-1 sm:mt-2">Packaging</span>
+            </h1>
 
-        <div class="glow-orb glow-orb-1"></div>
-        <div class="glow-orb glow-orb-2"></div>
-
-        <div class="relative z-20 max-w-7xl mx-auto w-full px-4 py-24">
-            <div class="max-w-2xl text-white">
-                <div class="hero-badge">
-                    <span class="live-dot"></span>
-                    <span>Sustainable Printing & Packaging</span>
-                </div>
-
-                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
-                    <span class="block overflow-hidden"><span class="reveal-line">We Are Solutions</span></span>
-                    <span class="block overflow-hidden"><span class="reveal-line" style="animation-delay:.15s">For Your
-                            <span class="gradient-text">Brand Printing</span></span></span>
-                    <span class="block overflow-hidden"><span class="reveal-line" style="animation-delay:.3s">&
-                            Packaging</span></span>
-                </h1>
-
-                <p class="text-gray-200 text-lg mb-8 max-w-xl leading-relaxed" style="animation: fadeUp .9s .45s both">
-                    Premier eco-friendly printing and packaging partner. Cutting-edge technology, sustainable practices,
-                    and brand-elevating designs.
+            <!-- Dynamic Changing Text (Services) -->
+            <div id="dynamicHeroText" class="min-h-[120px] sm:min-h-[140px] mb-4 sm:mb-8 w-full max-w-2xl mx-auto flex flex-col items-center px-1">
+                <h3 id="dynamicHeroTitle" class="text-sm sm:text-2xl lg:text-3xl font-extrabold text-brand-light mb-2 sm:mb-3 font-display transition-all duration-500 ease-in-out drop-shadow-md">Plastic Packaging</h3>
+                <p id="dynamicHeroDesc" class="text-[10px] sm:text-base lg:text-lg leading-relaxed mx-auto transition-all duration-500 ease-in-out drop-shadow-md text-gray-300">
+                    Plastic packaging is a versatile, durable, and cost-effective solution for preserving and protecting products. Customizable in design and size, plastic packaging enhances brand visibility.
                 </p>
+            </div>
 
-                <div class="flex flex-wrap gap-4 mb-12" style="animation: fadeUp .9s .6s both">
-                    <a href="#services" class="magnetic-btn btn-primary">Explore Services <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#about" class="btn-outline">Learn More <i class="fa-solid fa-play text-xs"></i></a>
+            <!-- CTA Buttons (Row) -->
+            <div class="flex flex-row justify-center items-center gap-2 sm:gap-4 mb-6 sm:mb-10 w-full max-w-md mx-auto">
+                <!-- Dynamic Button -->
+                <a href="#plastic-packaging" id="dynamicHeroBtn" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 bg-brand hover:bg-brand-dark text-white px-2 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-bold shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:-translate-y-1 transition-all duration-300 text-[10px] sm:text-base whitespace-nowrap">
+                    <span id="dynamicHeroBtnText" class="truncate">Get Plastic Packaging</span> <i class="fa-solid fa-arrow-right text-[9px] sm:text-sm"></i>
+                </a>
+                
+                <!-- Static Button -->
+                <a href="#services" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-2 bg-white/10 hover:bg-white hover:text-brand-deep border border-white/30 text-white px-2 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-bold backdrop-blur-md hover:-translate-y-1 transition-all duration-300 text-[10px] sm:text-base whitespace-nowrap">
+                    Explore Services <i class="fa-solid fa-layer-group text-[9px] sm:text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Static Stats -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-12 w-full max-w-lg mx-auto border-t border-white/20 pt-4 sm:pt-6">
+                <div class="text-center">
+                    <div class="text-xl sm:text-4xl lg:text-5xl font-extrabold text-white counter" data-target="32">0</div>
+                    <div class="text-[8px] sm:text-xs text-gray-300 uppercase tracking-widest mt-1 sm:mt-2 font-semibold">Years Exp.</div>
                 </div>
-
-                <div class="grid grid-cols-3 gap-6 max-w-lg" style="animation: fadeUp .9s .75s both">
-                    <div class="stat-item">
-                        <div class="text-4xl font-extrabold text-brand-light counter" data-target="32">0</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Years</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="text-4xl font-extrabold text-brand-light counter" data-target="33">0</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Brands</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="text-4xl font-extrabold text-brand-light"><span class="counter"
-                                data-target="95">0</span>%</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Quality</div>
-                    </div>
+                <div class="text-center border-l border-white/20">
+                    <div class="text-xl sm:text-4xl lg:text-5xl font-extrabold text-white"><span class="counter" data-target="33">0</span>+</div>
+                    <div class="text-[8px] sm:text-xs text-gray-300 uppercase tracking-widest mt-1 sm:mt-2 font-semibold">Top Brands</div>
+                </div>
+                <div class="text-center border-l border-white/20">
+                    <div class="text-xl sm:text-4xl lg:text-5xl font-extrabold text-white"><span class="counter" data-target="95">0</span>%</div>
+                    <div class="text-[8px] sm:text-xs text-gray-300 uppercase tracking-widest mt-1 sm:mt-2 font-semibold">Satisfaction</div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="mouse">
-                <div class="wheel"></div>
+<!-- ============ QUALITY SECTION (ONLY RINGS) ============ -->
+<!-- Used negative margin to overlap the hero section background seamlessly -->
+<section id="quality" class="py-24 bg-brand-deep relative overflow-hidden">
+    
+    <!-- Background Glow blending with hero -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <span class="section-tag border-brand/40 text-brand-light bg-brand/10">Performance</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display mt-4 mb-4">Our Quality Standards</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">We ensure top-tier quality in every aspect of our packaging and printing process.</p>
+        </div>
+
+        <!-- 3 Large Rings Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 items-center justify-items-center">
+            
+            <!-- Ring 1: Quality 95% -->
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 140 140">
+                        <circle class="text-white/5" stroke-width="6" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" />
+                        <circle class="progress-ring-fg text-brand drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" stroke-width="6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" data-percent="95" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-4xl sm:text-5xl font-extrabold text-white">95%</span>
+                    </div>
+                </div>
+                <h3 class="mt-6 text-xl sm:text-2xl font-bold text-white group-hover:text-brand transition-colors duration-300">Quality</h3>
             </div>
-        </div>
 
-        <div class="absolute bottom-8 right-8 z-20 flex flex-col gap-3">
-            <button class="dot active" data-index="0"></button>
-            <button class="dot" data-index="1"></button>
-            <button class="dot" data-index="2"></button>
+            <!-- Ring 2: Sustainable 93% -->
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 140 140">
+                        <circle class="text-white/5" stroke-width="6" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" />
+                        <circle class="progress-ring-fg text-brand drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" stroke-width="6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" data-percent="93" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-4xl sm:text-5xl font-extrabold text-white">93%</span>
+                    </div>
+                </div>
+                <h3 class="mt-6 text-xl sm:text-2xl font-bold text-white group-hover:text-brand transition-colors duration-300">Sustainable</h3>
+            </div>
+
+            <!-- Ring 3: Design 90% -->
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 140 140">
+                        <circle class="text-white/5" stroke-width="6" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" />
+                        <circle class="progress-ring-fg text-brand drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" stroke-width="6" stroke-linecap="round" stroke="currentColor" fill="transparent" r="60" cx="70" cy="70" data-percent="90" />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-4xl sm:text-5xl font-extrabold text-white">90%</span>
+                    </div>
+                </div>
+                <h3 class="mt-6 text-xl sm:text-2xl font-bold text-white group-hover:text-brand transition-colors duration-300">Design</h3>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ============ MARQUEE ============ -->
     <div class="bg-brand-deep py-5 overflow-hidden border-y border-white/5 transition-theme">

@@ -55,7 +55,7 @@ function openMobileMenu() {
     mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
     mobileMenu.setAttribute('aria-hidden', 'false');
     menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden'; // lock scroll
+    document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
@@ -63,93 +63,24 @@ function closeMobileMenu() {
     mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
     mobileMenu.setAttribute('aria-hidden', 'true');
     menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = ''; // unlock scroll
+    document.body.style.overflow = '';
 }
 
 menuBtn?.addEventListener('click', openMobileMenu);
 closeMenuBtn?.addEventListener('click', closeMobileMenu);
 mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
 
-// Close on link click
 document.querySelectorAll('.mobile-link, #mobileMenu a[href^="#"]').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
 
-// Close on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMobileMenu();
 });
 
-// Close menu when resizing to desktop
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 1024) closeMobileMenu();
 });
-
-// ============ HERO SLIDER ============
-const slides = document.querySelectorAll('.hero-bg .slide');
-const dots = document.querySelectorAll('.dot');
-let current = 0;
-
-function goTo(i) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = i;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-}
-dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
-setInterval(() => goTo((current + 1) % slides.length), 5500);
-
-// ============ PARTICLES CANVAS (Theme-Aware) ============
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-let particles = [];
-
-function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-function hexToRgb(hex) {
-    hex = hex.replace('#', '');
-    const r = parseInt(hex.substring(0, 2), 16);
-    const g = parseInt(hex.substring(2, 4), 16);
-    const b = parseInt(hex.substring(4, 6), 16);
-    return `${r},${g},${b}`;
-}
-
-class Particle {
-    constructor() { this.reset(); this.y = Math.random() * canvas.height; }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = canvas.height + 10;
-        this.vy = Math.random() * 0.5 + 0.3;
-        this.vx = (Math.random() - 0.5) * 0.3;
-        this.size = Math.random() * 2.5 + 1;
-        this.alpha = Math.random() * 0.5 + 0.2;
-    }
-    update() {
-        this.x += this.vx; this.y -= this.vy;
-        if (this.y < -10) this.reset();
-    }
-    draw() {
-        const glow = getComputedStyle(document.documentElement).getPropertyValue('--brand-glow').trim();
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${hexToRgb(glow)}, ${this.alpha})`;
-        ctx.fill();
-    }
-}
-for (let i = 0; i < 80; i++) particles.push(new Particle());
-
-function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animateParticles);
-}
-animateParticles();
 
 // ============ COUNTERS ============
 const counters = document.querySelectorAll('.counter');
@@ -258,3 +189,124 @@ if (form) {
         }, 2500);
     });
 }
+
+// ============ HERO SLIDER & DYNAMIC TEXT ============
+const heroSlides = document.querySelectorAll('.hero-bg .slide');
+const dynamicHeroTitle = document.getElementById('dynamicHeroTitle');
+const dynamicHeroDesc = document.getElementById('dynamicHeroDesc');
+const dynamicHeroBtn = document.getElementById('dynamicHeroBtn');
+const dynamicHeroBtnText = document.getElementById('dynamicHeroBtnText');
+let currentHeroSlide = 0;
+let heroInterval;
+
+const heroServicesData = [
+    {
+        title: "Plastic Packaging",
+        desc: "Plastic packaging is a versatile, durable, and cost-effective solution for preserving and protecting products. Customizable in design and size, plastic packaging enhances brand visibility.",
+        btnText: "Get Plastic Packaging",
+        link: "#plastic-packaging"
+    },
+    {
+        title: "Tissue Conversion",
+        desc: "Tissue conversion transforms raw tissue paper into finished products like napkins, facial tissues, and paper towels.",
+        btnText: "Get Tissue Conversion",
+        link: "#tissue-conversion"
+    },
+    {
+        title: "Flexible Printing",
+        desc: "Flexible printing offers versatile, efficient solutions for packaging and custom designs. It adapts to different materials and shapes, ensuring high-quality, durable prints that enhance product appeal and branding.",
+        btnText: "Get Flexible Printing",
+        link: "#flexible-printing"
+    },
+    {
+        title: "Roll to Roll Label Printing",
+        desc: "Roll-to-roll label printing is an efficient, high-speed solution for producing custom labels in bulk. Ideal for industries.",
+        btnText: "Get Roll to Roll Labels",
+        link: "#roll-to-roll"
+    },
+    {
+        title: "Laminated Tubes",
+        desc: "Laminated tubes are durable, lightweight packaging solutions ideal for cosmetics, pharmaceuticals, and food products.",
+        btnText: "Get Laminated Tubes",
+        link: "#laminated-tubes"
+    },
+    {
+        title: "Offset Printing",
+        desc: "Offset printing is a high-quality, cost-effective method ideal for large volumes. It ensures vibrant colors, sharp images, and professional results on various materials.",
+        btnText: "Get Offset Printing",
+        link: "#offset-printing"
+    }
+];
+
+function changeHeroSlide(index) {
+    // 1. Background change
+    heroSlides.forEach(slide => slide.classList.remove('active'));
+    heroSlides[index].classList.add('active');
+
+    // 2. Fade out animation
+    dynamicHeroTitle.style.opacity = '0';
+    dynamicHeroDesc.style.opacity = '0';
+    dynamicHeroTitle.style.transform = 'translateY(10px)';
+    dynamicHeroDesc.style.transform = 'translateY(10px)';
+
+    // 3. Change text after fade out
+    setTimeout(() => {
+        const data = heroServicesData[index];
+        
+        // Update Title & Desc
+        dynamicHeroTitle.innerText = data.title;
+        dynamicHeroDesc.innerText = data.desc;
+        
+        // Update Button Text & Link
+        if (dynamicHeroBtnText) dynamicHeroBtnText.innerText = data.btnText;
+        if (dynamicHeroBtn) dynamicHeroBtn.href = data.link;
+        
+        // Fade in animation
+        dynamicHeroTitle.style.opacity = '1';
+        dynamicHeroDesc.style.opacity = '1';
+        dynamicHeroTitle.style.transform = 'translateY(0)';
+        dynamicHeroDesc.style.transform = 'translateY(0)';
+    }, 300);
+}
+
+// Start Slider
+if (heroSlides.length > 0) {
+    // Initial load
+    changeHeroSlide(0);
+
+    // Auto change every 5 seconds
+    heroInterval = setInterval(() => {
+        currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+        changeHeroSlide(currentHeroSlide);
+    }, 5000);
+}
+
+// ============ NEW CIRCULAR PROGRESS RINGS (Quality Section) ============
+const progressRings = document.querySelectorAll('.progress-ring-fg');
+
+const ringObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const circle = entry.target;
+            const percent = +circle.getAttribute('data-percent');
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+
+            // Set initial state (0% fill)
+            circle.style.strokeDasharray = circumference;
+            circle.style.strokeDashoffset = circumference;
+            circle.style.transition = 'stroke-dashoffset 2s ease-in-out';
+
+            // Animate to target percentage after a tiny delay
+            setTimeout(() => {
+                const offset = circumference - (percent / 100) * circumference;
+                circle.style.strokeDashoffset = offset;
+            }, 200);
+
+            // Stop observing once animated
+            ringObserver.unobserve(circle);
+        }
+    });
+}, { threshold: 0.5 });
+
+progressRings.forEach(ring => ringObserver.observe(ring));

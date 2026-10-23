@@ -34,7 +34,6 @@ body {
 
 /* ========== CUSTOM CURSOR ========== */
 @media (min-width: 1025px) {
-
     body,
     a,
     button {
@@ -76,7 +75,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-
     .cursor-dot,
     .cursor-outline {
         display: none;
@@ -131,13 +129,10 @@ body {
 }
 
 @keyframes loaderPulse {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 var(--brand-pulse);
     }
-
     50% {
         transform: scale(1.08);
         box-shadow: 0 0 0 24px transparent;
@@ -161,12 +156,10 @@ body {
 }
 
 @keyframes loaderBar {
-    to {
-        width: 100%;
-    }
+    to { width: 100%; }
 }
 
-/* ========== NAV ========== */
+/* ========== NAVBAR ========== */
 .glass-nav {
     background: rgba(255, 255, 255, .75);
     backdrop-filter: blur(20px) saturate(180%);
@@ -221,6 +214,7 @@ body {
     width: 100%;
 }
 
+/* ========== MOBILE MENU ========== */
 .mobile-link {
     display: block;
     padding: 12px 16px;
@@ -238,37 +232,18 @@ body {
     padding-left: 22px;
 }
 
-/* Mobile link stagger animation (uses aria-hidden attribute) */
 #mobileMenu[aria-hidden="false"] .mobile-link {
     opacity: 1;
     transform: translateX(0);
 }
 
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(1) {
-    transition-delay: .05s;
-}
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(1) { transition-delay: .05s; }
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(2) { transition-delay: .1s; }
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(3) { transition-delay: .15s; }
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(4) { transition-delay: .2s; }
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(5) { transition-delay: .25s; }
+#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(6) { transition-delay: .3s; }
 
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(2) {
-    transition-delay: .1s;
-}
-
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(3) {
-    transition-delay: .15s;
-}
-
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(4) {
-    transition-delay: .2s;
-}
-
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(5) {
-    transition-delay: .25s;
-}
-
-#mobileMenu[aria-hidden="false"] .mobile-link:nth-child(6) {
-    transition-delay: .3s;
-}
-
-/* Better focus states for accessibility */
 #menuBtn:focus-visible,
 #closeMenuBtn:focus-visible,
 .mobile-link:focus-visible {
@@ -365,13 +340,8 @@ body {
 }
 
 @keyframes topbarShine {
-    from {
-        left: -60%;
-    }
-
-    to {
-        left: 160%;
-    }
+    from { left: -60%; }
+    to { left: 160%; }
 }
 
 /* ========== SECTION TITLES ========== */
@@ -401,35 +371,25 @@ body {
     transition: color .5s;
 }
 
-/* ========== HERO ========== */
+/* ========== HERO SECTION ========== */
 .hero-bg .slide {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.5s ease;
-    transform: scale(1.1);
+    transition: opacity 1.2s ease-in-out;
+    transform: scale(1);
 }
 
 .hero-bg .slide.active {
     opacity: 1;
-    animation: kenBurns 12s ease-out forwards;
+    animation: kenBurns 10s ease-out forwards;
 }
 
 @keyframes kenBurns {
-    from {
-        transform: scale(1.1);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
-#particles {
-    width: 100%;
-    height: 100%;
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
 }
 
 .glow-orb {
@@ -449,25 +409,9 @@ body {
     animation: orbFloat 12s ease-in-out infinite;
 }
 
-.glow-orb-2 {
-    width: 500px;
-    height: 500px;
-    background: var(--brand-glow-pulse);
-    bottom: -200px;
-    right: -100px;
-    animation: orbFloat 16s ease-in-out infinite reverse;
-}
-
 @keyframes orbFloat {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(60px, -80px) scale(1.15);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, -80px) scale(1.15); }
 }
 
 .hero-badge {
@@ -476,16 +420,15 @@ body {
     gap: 10px;
     padding: 10px 20px;
     border-radius: 999px;
-    background: var(--brand-50);
-    border: 1px solid var(--brand);
-    color: var(--brand-dark);
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: .5px;
     margin-bottom: 24px;
     backdrop-filter: blur(10px);
     animation: fadeUp .9s 0s both;
-    transition: all .5s;
 }
 
 .live-dot {
@@ -498,17 +441,9 @@ body {
 }
 
 @keyframes pulseDot {
-    0% {
-        box-shadow: 0 0 0 0 var(--brand-glow-pulse);
-    }
-
-    70% {
-        box-shadow: 0 0 0 12px transparent;
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 transparent;
-    }
+    0% { box-shadow: 0 0 0 0 var(--brand-glow-pulse); }
+    70% { box-shadow: 0 0 0 12px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 .reveal-line {
@@ -517,13 +452,8 @@ body {
 }
 
 @keyframes revealLine {
-    from {
-        transform: translateY(110%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
 }
 
 .gradient-text {
@@ -536,84 +466,14 @@ body {
 }
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.stat-item {
-    border-left: 2px solid var(--brand);
-    padding-left: 16px;
-    opacity: .7;
-    transition: border-color .5s;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, .6);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.mouse {
-    width: 24px;
-    height: 38px;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 14px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--brand);
-    border-radius: 2px;
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: wheelScroll 1.6s ease-in-out infinite;
-}
-
-@keyframes wheelScroll {
-    0% {
-        top: 6px;
-        opacity: 1;
-    }
-
-    100% {
-        top: 20px;
-        opacity: 0;
-    }
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, .4);
-    border-radius: 50%;
-    transition: all .3s ease;
-}
-
-.dot.active {
-    background: var(--brand);
-    height: 32px;
-    border-radius: 4px;
+/* Hero Dynamic Text Transition */
+#dynamicHeroTitle, 
+#dynamicHeroDesc {
+    transition: all 0.4s ease-in-out;
 }
 
 /* ========== MARQUEE ========== */
@@ -640,13 +500,8 @@ body {
 }
 
 @keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .marquee-text {
@@ -728,15 +583,8 @@ body {
 }
 
 @keyframes floatBadge {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .deco-circle {
@@ -764,9 +612,7 @@ body {
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 .feature-item {
@@ -804,19 +650,9 @@ body {
 }
 
 @keyframes blob {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(40px, -60px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(-40px, 40px) scale(.95);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -60px) scale(1.1); }
+    66% { transform: translate(-40px, 40px) scale(.95); }
 }
 
 .quality-card {
@@ -1407,6 +1243,7 @@ body {
     transition: transform .2s ease-out;
 }
 
+/* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar {
     width: 10px;
 }
