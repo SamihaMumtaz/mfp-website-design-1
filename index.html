@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="emerald-slate">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maqsood Faisal Printing Press | Premium Eco-Friendly Packaging</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: 'var(--brand)',
+                            dark: 'var(--brand-dark)',
+                            light: 'var(--brand-light)',
+                            deep: 'var(--brand-deep)',
+                            glow: 'var(--brand-glow)',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Urbanist', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Space Grotesk', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        [data-theme="emerald-slate"] {
+            --brand: #10B981;
+            /* Emerald Green (First theme) */
+            --brand-dark: #047857;
+            --brand-light: #6EE7B7;
+            --brand-deep: #0F172A;
+            /* Dark Slate (Last theme) */
+            --brand-glow: #A7F3D0;
+            --brand-pulse: rgba(16, 185, 129, 0.7);
+            --brand-glow-pulse: rgba(167, 243, 208, 0.7);
+            --brand-50: #ECFDF5;
+            --brand-100: #D1FAE5;
+        }
+        
+
+        /* ========== BASE ========== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            transition: background-color .5s, color .5s;
+        }
+
+        .transition-theme,
+        [class*="bg-brand"],
+        [class*="text-brand"],
+        [class*="border-brand"],
+        [class*="from-brand"],
+        [class*="to-brand"],
+        [class*="via-brand"] {
+            transition: background-color .5s ease, color .5s ease, border-color .5s ease, fill .5s ease, stroke .5s ease;
+        }
+
+        /* ========== CUSTOM CURSOR ========== */
+        @media (min-width: 1025px) {
+
+            body,
+            a,
+            button {
+                cursor: none;
+            }
+
+            .cursor-dot,
+            .cursor-outline {
+                position: fixed;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                z-index: 9999;
+                border-radius: 50%;
+                will-change: transform;
+            }
+
+            .cursor-dot {
+                width: 8px;
+                height: 8px;
+                background: var(--brand);
+            }
+
+            .cursor-outline {
+                width: 40px;
+                height: 40px;
+                border: 2px solid var(--brand);
+                opacity: .5;
+                transition: width .3s, height .3s, opacity .3s, border-color .3s;
+            }
+
+            .cursor-outline.grow {
+                width: 65px;
+                height: 65px;
+                background: var(--brand);
+                opacity: .1;
+                border-color: var(--brand);
+            }
+        }
+
+        @media (max-width: 1024px) {
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+        }
+
+        /* ========== SCROLL PROGRESS ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--brand), var(--brand-glow));
+            z-index: 999;
+            box-shadow: 0 0 20px var(--brand-pulse);
+            transition: width .1s, background .5s;
+        }
+
+        /* ========== LOADER ========== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--brand-deep);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            transition: opacity .6s, visibility .6s, background-color .5s;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-glow));
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Urbanist';
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #fff;
+            animation: loaderPulse 1.4s ease-in-out infinite;
+        }
+
+        @keyframes loaderPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 var(--brand-pulse);
+            }
+
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 0 24px transparent;
+            }
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255, 255, 255, .15);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .loader-bar span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--brand), var(--brand-glow));
+            animation: loaderBar 1.6s ease forwards;
+        }
+
+        @keyframes loaderBar {
+            to {
+                width: 100%;
+            }
+        }
+
+        /* ========== NAV ========== */
+        .glass-nav {
+            background: rgba(255, 255, 255, .75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+            transition: all .3s;
+        }
+
+        .glass-nav.scrolled {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+            background: rgba(255, 255, 255, .92);
+        }
+
+        .logo-box {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 20px;
+            box-shadow: 0 8px 24px -8px var(--brand-pulse);
+            transition: transform .6s ease, background .5s;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 6px 0;
+            transition: color .3s;
+            font-weight: 500;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand);
+            transition: width .35s cubic-bezier(.65, .05, .36, 1), background .5s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-link {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: var(--brand-deep);
+            font-weight: 600;
+            transition: all .25s;
+        }
+
+        .mobile-link:hover {
+            background: var(--brand-50);
+            color: var(--brand);
+            padding-left: 22px;
+        }
+
+        /* ========== BUTTONS ========== */
+        .magnetic-btn {
+            position: relative;
+            transition: transform .2s ease;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--brand);
+            color: #fff;
+            padding: 16px 34px;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 12px 32px -10px var(--brand-pulse);
+            transition: all .35s cubic-bezier(.65, .05, .36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
+            transition: left .6s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-dark);
+            box-shadow: 0 20px 40px -10px var(--brand-pulse);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid rgba(255, 255, 255, .7);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: all .35s cubic-bezier(.65, .05, .36, 1);
+            backdrop-filter: blur(6px);
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--brand-deep);
+            transform: translateY(-3px);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-deep);
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: 2px solid #e5e7eb;
+            transition: all .3s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--brand);
+            color: var(--brand);
+            transform: translateY(-2px);
+        }
+
+        .topbar-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--brand-pulse), transparent);
+            animation: topbarShine 8s linear infinite;
+        }
+
+        @keyframes topbarShine {
+            from {
+                left: -60%;
+            }
+
+            to {
+                left: 160%;
+            }
+        }
+
+        /* ========== SECTION TITLES ========== */
+        .section-tag {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid var(--brand);
+            color: var(--brand);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 999px;
+            margin-bottom: 18px;
+            background: var(--brand-50);
+            transition: all .5s;
+        }
+
+        .section-title {
+            font-family: 'Urbanist', sans-serif;
+            font-size: clamp(2rem, 3.6vw, 3.2rem);
+            font-weight: 800;
+            color: var(--brand-deep);
+            line-height: 1.15;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+            transition: color .5s;
+        }
+
+        /* ========== HERO ========== */
+        .hero-bg .slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            transform: scale(1.1);
+        }
+
+        .hero-bg .slide.active {
+            opacity: 1;
+            animation: kenBurns 12s ease-out forwards;
+        }
+
+        @keyframes kenBurns {
+            from {
+                transform: scale(1.1);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        #particles {
+            width: 100%;
+            height: 100%;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        .glow-orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--brand-pulse);
+            top: 10%;
+            left: -100px;
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+
+        .glow-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--brand-glow-pulse);
+            bottom: -200px;
+            right: -100px;
+            animation: orbFloat 16s ease-in-out infinite reverse;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(60px, -80px) scale(1.15);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: var(--brand-50);
+            border: 1px solid var(--brand);
+            color: var(--brand-dark);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            animation: fadeUp .9s 0s both;
+            transition: all .5s;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand);
+            box-shadow: 0 0 0 0 var(--brand-pulse);
+            animation: pulseDot 1.8s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% {
+                box-shadow: 0 0 0 0 var(--brand-glow-pulse);
+            }
+
+            70% {
+                box-shadow: 0 0 0 12px transparent;
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 transparent;
+            }
+        }
+
+        .reveal-line {
+            display: block;
+            animation: revealLine 1s cubic-bezier(.65, .05, .36, 1) both;
+        }
+
+        @keyframes revealLine {
+            from {
+                transform: translateY(110%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--brand-glow), var(--brand));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            transition: background .5s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-item {
+            border-left: 2px solid var(--brand);
+            padding-left: 16px;
+            opacity: .7;
+            transition: border-color .5s;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, .6);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .mouse {
+            width: 24px;
+            height: 38px;
+            border: 2px solid rgba(255, 255, 255, .5);
+            border-radius: 14px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--brand);
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: wheelScroll 1.6s ease-in-out infinite;
+        }
+
+        @keyframes wheelScroll {
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+
+        .dot.active {
+            background: var(--brand);
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        /* ========== MARQUEE ========== */
+        .marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            animation: marquee 32s linear infinite;
+            width: max-content;
+        }
+
+        .marquee:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-track.brand-track-reverse {
+            animation-direction: reverse;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .85);
+            white-space: nowrap;
+            letter-spacing: -.5px;
+        }
+
+        .marquee-sep {
+            color: var(--brand);
+            font-size: 1.4rem;
+            transition: color .5s;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Urbanist';
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #9CA3AF;
+            padding: 18px 24px;
+            transition: all .35s ease;
+            white-space: nowrap;
+            border-radius: 12px;
+        }
+
+        .brand-logo i {
+            font-size: 1.4rem;
+            color: var(--brand);
+            transition: color .5s;
+        }
+
+        .brand-logo:hover {
+            color: var(--brand-deep);
+            background: #fff;
+            box-shadow: 0 12px 30px -8px rgba(0, 0, 0, .1);
+            transform: translateY(-4px);
+        }
+
+        /* ========== ABOUT ========== */
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-wrap img {
+            box-shadow: 0 40px 80px -30px var(--brand-pulse);
+            transition: transform .6s ease;
+        }
+
+        .about-img-wrap:hover img {
+            transform: scale(1.02);
+        }
+
+        .float-badge {
+            position: absolute;
+            background: #fff;
+            border-radius: 18px;
+            padding: 18px 22px;
+            box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .15);
+            border-left: 4px solid var(--brand);
+            animation: floatBadge 4s ease-in-out infinite;
+            transition: border-color .5s;
+        }
+
+        .float-badge-1 {
+            bottom: -24px;
+            right: 24px;
+        }
+
+        .float-badge-2 {
+            top: 24px;
+            left: -24px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .deco-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed var(--brand);
+            opacity: .3;
+            z-index: 0;
+        }
+
+        .deco-1 {
+            width: 300px;
+            height: 300px;
+            top: 20%;
+            left: -100px;
+            animation: spin 30s linear infinite;
+        }
+
+        .deco-2 {
+            width: 400px;
+            height: 400px;
+            bottom: 10%;
+            right: -150px;
+            animation: spin 40s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #374151;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color .25s, transform .25s;
+        }
+
+        .feature-item:hover {
+            color: var(--brand);
+            transform: translateX(4px);
+        }
+
+        .feature-item i {
+            color: var(--brand);
+            background: var(--brand-50);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+            transition: color .5s, background .5s;
+        }
+
+        /* ========== QUALITY ========== */
+        .animate-blob {
+            animation: blob 12s infinite ease-in-out;
+        }
+
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(40px, -60px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-40px, 40px) scale(.95);
+            }
+        }
+
+        .quality-card {
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 28px;
+            padding: 44px 28px;
+            text-align: center;
+            transition: all .5s cubic-bezier(.65, .05, .36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quality-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--brand-50), transparent 60%);
+            opacity: 0;
+            transition: opacity .4s;
+        }
+
+        .quality-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--brand);
+            box-shadow: 0 30px 60px -20px var(--brand-pulse);
+        }
+
+        .quality-card:hover::before {
+            opacity: .1;
+        }
+
+        .quality-card h3 {
+            font-family: 'Urbanist';
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 24px 0 8px;
+            color: #fff;
+            position: relative;
+        }
+
+        .quality-card p {
+            color: #9CA3AF;
+            font-size: .95rem;
+            position: relative;
+        }
+
+        .progress-circle {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+        }
+
+        .progress-circle svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .bg-ring {
+            fill: none;
+            stroke: rgba(255, 255, 255, .08);
+            stroke-width: 8;
+        }
+
+        .fg-ring {
+            fill: none;
+            stroke: var(--brand);
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 2s cubic-bezier(.65, .05, .36, 1), stroke .5s;
+            filter: drop-shadow(0 0 8px var(--brand-pulse));
+        }
+
+        .progress-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Urbanist';
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .mini-card {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 20px;
+            padding: 32px 24px;
+            transition: all .4s ease;
+        }
+
+        .mini-card:hover {
+            background: rgba(255, 255, 255, .08);
+            border-color: var(--brand);
+            transform: translateY(-6px);
+        }
+
+        .mini-icon {
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 16px;
+            box-shadow: 0 12px 30px -8px var(--brand-pulse);
+            transition: background .5s;
+        }
+
+        .mini-card h4 {
+            color: #fff;
+            font-family: 'Urbanist';
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .mini-card p {
+            color: #9CA3AF;
+            font-size: .9rem;
+        }
+
+        /* ========== SERVICE CARDS ========== */
+        .service-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .04);
+            transition: all .5s cubic-bezier(.65, .05, .36, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            isolation: isolate;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand), var(--brand-glow));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s ease, background .5s;
+            z-index: 2;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -20px var(--brand-pulse);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-bg-num {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'Urbanist';
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--brand);
+            opacity: .06;
+            line-height: 1;
+            transition: all .4s;
+            z-index: 0;
+        }
+
+        .service-card:hover .service-bg-num {
+            opacity: .15;
+            transform: scale(1.15) rotate(-8deg);
+        }
+
+        .service-icon {
+            position: relative;
+            z-index: 1;
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            background: var(--brand-50);
+            color: var(--brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+            transition: all .5s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            transform: rotate(-10deg) scale(1.08);
+            box-shadow: 0 15px 35px -8px var(--brand-pulse);
+        }
+
+        .service-card h3 {
+            font-family: 'Urbanist';
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--brand-deep);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            transition: color .5s;
+        }
+
+        .service-card p {
+            color: #6B7280;
+            font-size: .95rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+
+        .service-link {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand);
+            font-weight: 700;
+            font-size: .9rem;
+            transition: gap .3s ease, color .5s;
+        }
+
+        .service-link:hover {
+            gap: 14px;
+        }
+
+        .spotlight {
+            --mx: 50%;
+            --my: 50%;
+        }
+
+        .spotlight::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 200px at var(--mx) var(--my), var(--brand-50), transparent 80%);
+            opacity: 0;
+            transition: opacity .4s;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .spotlight:hover::after {
+            opacity: .8;
+        }
+
+        /* ========== PROCESS ========== */
+        .process-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .process-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--brand);
+            opacity: .15;
+            transition: background .5s;
+        }
+
+        .process-line-fill {
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(180deg, var(--brand), var(--brand-glow));
+            transition: height 1.2s ease, background .5s;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Urbanist';
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--brand);
+            z-index: 2;
+            box-shadow: 0 12px 30px -8px var(--brand-pulse);
+            transition: all .4s;
+        }
+
+        .process-step:hover .step-num {
+            background: var(--brand);
+            color: #fff;
+            transform: scale(1.12);
+        }
+
+        .step-content {
+            flex: 1;
+            background: #fff;
+            border-radius: 18px;
+            padding: 24px 28px;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, .08);
+            border: 1px solid #f0f0f0;
+            transition: all .4s;
+        }
+
+        .process-step:hover .step-content {
+            border-color: var(--brand);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px var(--brand-pulse);
+        }
+
+        .step-content h4 {
+            font-family: 'Urbanist';
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--brand-deep);
+            margin-bottom: 6px;
+            transition: color .5s;
+        }
+
+        .step-content p {
+            color: #6B7280;
+            font-size: .92rem;
+        }
+
+        @media (max-width: 767px) {
+            .process-line {
+                left: 35px;
+            }
+
+            .process-step {
+                flex-direction: row !important;
+                text-align: left !important;
+                gap: 20px;
+            }
+
+            .step-num {
+                width: 56px;
+                height: 56px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px 32px;
+            box-shadow: 0 10px 40px -15px rgba(0, 0, 0, .08);
+            border: 1px solid #f0f0f0;
+            position: relative;
+            transition: all .4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px -20px var(--brand-pulse);
+            border-color: var(--brand);
+        }
+
+        .testimonial-card.featured {
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            border: none;
+            transition: background .5s;
+        }
+
+        .testimonial-card.featured .quote-mark {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        .testimonial-card.featured .stars i {
+            color: #fff;
+        }
+
+        .testimonial-card.featured .testimonial-text {
+            color: #fff;
+        }
+
+        .testimonial-card.featured .testimonial-author .text-brand-deep {
+            color: #fff !important;
+        }
+
+        .testimonial-card.featured .testimonial-author .text-gray-500 {
+            color: rgba(255, 255, 255, .75) !important;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: 10px;
+            right: 24px;
+            font-family: 'Urbanist';
+            font-size: 6rem;
+            line-height: 1;
+            color: var(--brand);
+            opacity: .12;
+            font-weight: 900;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 16px;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: #4B5563;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--brand-50);
+            transition: border-color .5s;
+        }
+
+        /* ========== CTA ========== */
+        .cta-bg {
+            background: url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1920&auto=format&fit=crop') center/cover;
+            animation: kenBurns 18s ease-in-out infinite alternate;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: #fff;
+            padding: 22px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .04);
+            transition: all .4s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-item:hover {
+            transform: translateX(8px);
+            border-color: var(--brand);
+            box-shadow: 0 15px 40px -15px var(--brand-pulse);
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 10px 25px -8px var(--brand-pulse);
+            transition: background .5s;
+        }
+
+        .social-btn {
+            width: 46px;
+            height: 46px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-deep);
+            transition: all .3s;
+        }
+
+        .social-btn:hover {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px -8px var(--brand-pulse);
+        }
+
+        .glass-form {
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .6);
+            box-shadow: 0 30px 80px -20px var(--brand-pulse);
+            transition: box-shadow .5s;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: .95rem;
+            outline: none;
+            transition: all .3s ease;
+            background: #fafafa;
+        }
+
+        .form-input:focus {
+            border-color: var(--brand);
+            background: #fff;
+            box-shadow: 0 0 0 4px var(--brand-50);
+            transform: translateY(-1px);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer-link {
+            position: relative;
+            display: inline-block;
+            transition: color .3s, padding-left .3s;
+        }
+
+        .footer-link:hover {
+            color: var(--brand);
+            padding-left: 8px;
+        }
+
+        .footer-link::before {
+            content: '→';
+            position: absolute;
+            left: -12px;
+            opacity: 0;
+            transition: opacity .3s, left .3s;
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+            left: -8px;
+        }
+
+        #backTop {
+            display: none;
+        }
+
+        #backTop.show {
+            display: flex;
+        }
+
+        .tilt {
+            transform-style: preserve-3d;
+            transition: transform .2s ease-out;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+            border-radius: 10px;
+            transition: background .5s;
+        }
+
+        @media (max-width: 640px) {
+            .float-badge {
+                padding: 12px 16px;
+            }
+
+            .float-badge-2 {
+                left: 8px;
+            }
+
+            .service-bg-num {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body bg-white text-gray-700 overflow-x-hidden">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="scroll-progress"></div>
+
+    <div id="loader">
+        <div class="loader-logo">M</div>
+        <div class="loader-bar"><span></span></div>
+    </div>
+
+        <!-- ============ TOP BAR ============ -->
+    <div class="bg-brand-deep text-white text-sm py-2.5 px-4 hidden lg:block relative overflow-hidden transition-theme">
+        <div class="topbar-shine"></div>
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3 relative z-10">
+            <div class="flex flex-wrap items-center gap-4 xl:gap-6">
+                <a href="mailto:info@mfp.com.pk" class="hover:text-brand-light transition flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-regular fa-envelope text-brand"></i>info@mfp.com.pk
+                </a>
+                <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-phone text-brand"></i>+92 111 333 301 (UAN)</span>
+                <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-phone text-brand"></i>+92 42 35402021-22-23-24</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 xl:gap-6">
+                <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-location-dot text-brand"></i>18-Km Ferozpur Road, Lahore, Pakistan.</span>
+                <div class="flex gap-3 border-l border-white/20 pl-4 xl:pl-6">
+                    <a href="#" class="hover:text-brand-light transition"><i class="fa-brands fa-linkedin-in text-brand"></i></a>
+                    <a href="#" class="hover:text-brand-light transition"><i class="fa-brands fa-facebook-f text-brand"></i></a>
+                    <a href="#" class="hover:text-brand-light transition"><i class="fa-brands fa-instagram text-brand"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header id="navbar" class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="logo-box group-hover:rotate-[360deg] transition-transform duration-700">
+                    <span>M</span>
+                </div>
+                <div class="leading-tight">
+                    <span class="block font-display font-extrabold text-lg text-brand-deep">Maqsood Faisal</span>
+                    <span class="block text-[10px] text-gray-500 tracking-[3px]">PRINTING PRESS</span>
+                </div>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-8 font-medium text-gray-700">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#quality" class="nav-link">Quality</a></li>
+                <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#contact"
+                class="magnetic-btn hidden lg:inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all">
+                <span>Get a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <button id="menuBtn"
+                class="lg:hidden text-2xl text-brand-deep w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobileMenu" class="hidden lg:hidden px-4 pb-6 bg-white border-t">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#quality" class="mobile-link">Quality</a>
+            <a href="#clients" class="mobile-link">Clients</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="relative min-h-[92vh] overflow-hidden flex items-center">
+        <canvas id="particles" class="absolute inset-0 z-0"></canvas>
+
+        <div class="hero-bg absolute inset-0 z-0">
+            <div class="slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1920&auto=format&fit=crop')">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1920&auto=format&fit=crop')">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop')">
+            </div>
+        </div>
+
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-brand-deep/95 via-brand-deep/70 to-transparent z-10 transition-theme">
+        </div>
+
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+
+        <div class="relative z-20 max-w-7xl mx-auto w-full px-4 py-24">
+            <div class="max-w-2xl text-white">
+                <div class="hero-badge">
+                    <span class="live-dot"></span>
+                    <span>Sustainable Printing & Packaging</span>
+                </div>
+
+                <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
+                    <span class="block overflow-hidden"><span class="reveal-line">We Are Solutions</span></span>
+                    <span class="block overflow-hidden"><span class="reveal-line" style="animation-delay:.15s">For Your
+                            <span class="gradient-text">Brand Printing</span></span></span>
+                    <span class="block overflow-hidden"><span class="reveal-line" style="animation-delay:.3s">&
+                            Packaging</span></span>
+                </h1>
+
+                <p class="text-gray-200 text-lg mb-8 max-w-xl leading-relaxed" style="animation: fadeUp .9s .45s both">
+                    Premier eco-friendly printing and packaging partner. Cutting-edge technology, sustainable practices,
+                    and brand-elevating designs.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-12" style="animation: fadeUp .9s .6s both">
+                    <a href="#services" class="magnetic-btn btn-primary">Explore Services <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#about" class="btn-outline">Learn More <i class="fa-solid fa-play text-xs"></i></a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 max-w-lg" style="animation: fadeUp .9s .75s both">
+                    <div class="stat-item">
+                        <div class="text-4xl font-extrabold text-brand-light counter" data-target="32">0</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="text-4xl font-extrabold text-brand-light counter" data-target="33">0</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Brands</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="text-4xl font-extrabold text-brand-light"><span class="counter"
+                                data-target="95">0</span>%</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Quality</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 right-8 z-20 flex flex-col gap-3">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="bg-brand-deep py-5 overflow-hidden border-y border-white/5 transition-theme">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-text">Offset Printing</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Flexible Packaging</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Roll to Roll Labels</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Tissue Conversion</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Plastic Packaging</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Laminated Tubes</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Offset Printing</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Flexible Packaging</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Roll to Roll Labels</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Tissue Conversion</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Plastic Packaging</span><span class="marquee-sep">✦</span>
+                <span class="marquee-text">Laminated Tubes</span><span class="marquee-sep">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        <div class="deco-circle deco-1"></div>
+        <div class="deco-circle deco-2"></div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center px-4 relative z-10">
+            <div data-aos="fade-right">
+                <div class="about-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop"
+                        class="w-full h-[520px] object-cover rounded-3xl" alt="About MFP" />
+
+                    <div class="float-badge float-badge-1">
+                        <i class="fa-solid fa-award text-2xl text-brand mb-2"></i>
+                        <div class="text-3xl font-extrabold text-brand-deep">32+</div>
+                        <div class="text-xs text-gray-500">Years of Excellence</div>
+                    </div>
+
+                    <div class="float-badge float-badge-2">
+                        <div class="flex -space-x-3 mb-2">
+                            <img src="https://i.pravatar.cc/40?img=1"
+                                class="w-9 h-9 rounded-full border-2 border-white">
+                            <img src="https://i.pravatar.cc/40?img=2"
+                                class="w-9 h-9 rounded-full border-2 border-white">
+                            <img src="https://i.pravatar.cc/40?img=3"
+                                class="w-9 h-9 rounded-full border-2 border-white">
+                            <div
+                                class="w-9 h-9 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center border-2 border-white">
+                                +30</div>
+                        </div>
+                        <div class="text-xs text-gray-600">Trusted by 33+ brands</div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">Trusted Partner in <span class="text-brand">Eco-Friendly</span> Printing</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Welcome to Maqsood Faisal Printing Press — your premier partner in eco-friendly printing and
+                    packaging. With cutting-edge technology and a commitment to sustainability, we bring your visions to
+                    life with minimal environmental impact.
+                </p>
+
+                <ul class="grid sm:grid-cols-2 gap-4 mb-8">
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Sustainable Practices</li>
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Advanced Technology</li>
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Eco-Friendly Solutions</li>
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Innovative Packaging</li>
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Trusted by Brands</li>
+                    <li class="feature-item"><i class="fa-solid fa-check"></i> Environmentally Responsible</li>
+                </ul>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="magnetic-btn btn-primary">Get in Touch <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#services" class="btn-ghost">Our Services <i
+                            class="fa-solid fa-chevron-right text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ QUALITY ============ -->
+    <section id="quality" class="py-28 bg-brand-deep text-white relative overflow-hidden transition-theme">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand rounded-full blur-[140px] animate-blob"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-light rounded-full blur-[140px] animate-blob"
+                style="animation-delay:3s"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="section-tag border-brand/40 text-brand-light">Quality Assurance</span>
+                <h2 class="section-title text-white">Accelerating <span class="text-brand-light">Innovations</span> In
+                    Packaging</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Our expertise drives impactful, innovative solutions tailored
+                    to elevate brands. Quality, speed, and creativity combined.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="quality-card tilt" data-aos="zoom-in">
+                    <div class="progress-circle" data-percent="95">
+                        <svg viewBox="0 0 140 140">
+                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
+                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
+                        </svg>
+                        <span class="progress-text">95%</span>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>Premium packaging quality ensures durability and satisfaction.</p>
+                </div>
+
+                <div class="quality-card tilt" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="progress-circle" data-percent="93">
+                        <svg viewBox="0 0 140 140">
+                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
+                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
+                        </svg>
+                        <span class="progress-text">93%</span>
+                    </div>
+                    <h3>Sustainable</h3>
+                    <p>Eco-conscious processes that protect our environment.</p>
+                </div>
+
+                <div class="quality-card tilt" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="progress-circle" data-percent="90">
+                        <svg viewBox="0 0 140 140">
+                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
+                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
+                        </svg>
+                        <span class="progress-text">90%</span>
+                    </div>
+                    <h3>Design</h3>
+                    <p>Creative designs that make your packaging stand out beautifully.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="mini-card" data-aos="fade-up">
+                    <div class="mini-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h4>Best Quality</h4>
+                    <p>Exceptional packaging ensuring durability, appeal, and satisfaction.</p>
+                </div>
+                <div class="mini-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mini-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h4>Creative Packaging</h4>
+                    <p>Unleashing unique designs that make your packaging stand out.</p>
+                </div>
+                <div class="mini-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mini-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h4>Eco Friendly</h4>
+                    <p>Sustainable packaging designed to reduce waste and protect nature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="py-28 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">We Provide <span class="text-brand">Various Kinds</span> Of Packaging</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From offset printing to flexible packaging — complete
+                    eco-conscious solutions for every brand.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card spotlight" data-aos="fade-up">
+                    <div class="service-bg-num">01</div>
+                    <div class="service-icon"><i class="fa-solid fa-print"></i></div>
+                    <h3>Offset Printing</h3>
+                    <p>High-volume, vibrant, and eco-friendly printing solutions ensuring sharp, professional results.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-bg-num">02</div>
+                    <div class="service-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3>Roll to Roll Labels</h3>
+                    <p>Speedy, accurate, and customizable eco-conscious labels for high-speed production.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-bg-num">03</div>
+                    <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3>Flexible Packaging</h3>
+                    <p>Durable, lightweight, and environmentally-friendly packaging options for all industries.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card spotlight" data-aos="fade-up">
+                    <div class="service-bg-num">04</div>
+                    <div class="service-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>Tissue Conversion</h3>
+                    <p>Eco-sensitive tissue products balancing softness and strength for premium use.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-bg-num">05</div>
+                    <div class="service-icon"><i class="fa-solid fa-bottle-water"></i></div>
+                    <h3>Plastic Packaging</h3>
+                    <p>Cost-effective, robust, and sustainable plastic packaging solutions for every need.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-bg-num">06</div>
+                    <div class="service-icon"><i class="fa-solid fa-tube"></i></div>
+                    <h3>Laminated Tubes</h3>
+                    <p>Aesthetic and functional tubes for various industries with sustainability emphasis.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="py-28 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="section-tag">How We Work</span>
+                <h2 class="section-title">Our <span class="text-brand">Proven Process</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A streamlined journey from concept to delivery — transparent,
+                    efficient, and quality-driven at every step.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-line">
+                    <div class="process-line-fill"></div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h4>Consultation</h4>
+                        <p>We understand your brand, goals, and packaging needs.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h4>Design & Prototype</h4>
+                        <p>Creative designs and physical prototypes for approval.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h4>Production</h4>
+                        <p>High-precision printing with eco-friendly materials.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-num">04</div>
+                    <div class="step-content">
+                        <h4>Quality Check</h4>
+                        <p>Rigorous QA to ensure excellence in every unit.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-num">05</div>
+                    <div class="step-content">
+                        <h4>Delivery</h4>
+                        <p>Timely delivery, ready to elevate your brand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CLIENTS ============ -->
+    <section id="clients" class="py-28 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14" data-aos="fade-up">
+                <span class="section-tag">Trusted By</span>
+                <h2 class="section-title">Leading <span class="text-brand">Brands</span> Trust Us</h2>
+                <p class="text-gray-600">We proudly serve some of the most recognized brands across Pakistan.</p>
+            </div>
+        </div>
+
+        <div class="marquee mb-6">
+            <div class="marquee-track brand-track">
+                <div class="brand-logo"><i class="fa-solid fa-bolt"></i> BrandOne</div>
+                <div class="brand-logo"><i class="fa-solid fa-cube"></i> BrandTwo</div>
+                <div class="brand-logo"><i class="fa-solid fa-leaf"></i> GreenCo</div>
+                <div class="brand-logo"><i class="fa-solid fa-star"></i> StarPack</div>
+                <div class="brand-logo"><i class="fa-solid fa-fire"></i> Ignite</div>
+                <div class="brand-logo"><i class="fa-solid fa-diamond"></i> LuxeBrand</div>
+                <div class="brand-logo"><i class="fa-solid fa-seedling"></i> EcoNest</div>
+                <div class="brand-logo"><i class="fa-solid fa-bolt"></i> BrandOne</div>
+                <div class="brand-logo"><i class="fa-solid fa-cube"></i> BrandTwo</div>
+                <div class="brand-logo"><i class="fa-solid fa-leaf"></i> GreenCo</div>
+                <div class="brand-logo"><i class="fa-solid fa-star"></i> StarPack</div>
+                <div class="brand-logo"><i class="fa-solid fa-fire"></i> Ignite</div>
+                <div class="brand-logo"><i class="fa-solid fa-diamond"></i> LuxeBrand</div>
+                <div class="brand-logo"><i class="fa-solid fa-seedling"></i> EcoNest</div>
+            </div>
+        </div>
+
+        <div class="marquee">
+            <div class="marquee-track brand-track-reverse">
+                <div class="brand-logo"><i class="fa-solid fa-crown"></i> RoyalPack</div>
+                <div class="brand-logo"><i class="fa-solid fa-gem"></i> EliteCo</div>
+                <div class="brand-logo"><i class="fa-solid fa-rocket"></i> NovaBrand</div>
+                <div class="brand-logo"><i class="fa-solid fa-feather"></i> Feather</div>
+                <div class="brand-logo"><i class="fa-solid fa-hexagon-nodes"></i> Hexa</div>
+                <div class="brand-logo"><i class="fa-solid fa-infinity"></i> Infinite</div>
+                <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i> ShieldCo</div>
+                <div class="brand-logo"><i class="fa-solid fa-crown"></i> RoyalPack</div>
+                <div class="brand-logo"><i class="fa-solid fa-gem"></i> EliteCo</div>
+                <div class="brand-logo"><i class="fa-solid fa-rocket"></i> NovaBrand</div>
+                <div class="brand-logo"><i class="fa-solid fa-feather"></i> Feather</div>
+                <div class="brand-logo"><i class="fa-solid fa-hexagon-nodes"></i> Hexa</div>
+                <div class="brand-logo"><i class="fa-solid fa-infinity"></i> Infinite</div>
+                <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i> ShieldCo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Our <span class="text-brand">Clients Say</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="quote-mark">"</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">MFP's packaging quality and turnaround time are unmatched. They've
+                        become an integral part of our brand identity.</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=5" alt="client">
+                        <div>
+                            <div class="font-bold text-brand-deep">Ayesha Khan</div>
+                            <div class="text-sm text-gray-500">Brand Manager, LuxeBrand</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="quote-mark">"</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">From design consultation to delivery, everything was seamless. Their
+                        eco-friendly approach aligns perfectly with our values.</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=8" alt="client">
+                        <div>
+                            <div class="font-bold text-brand-deep">Hassan Raza</div>
+                            <div class="text-sm text-gray-500">CEO, GreenCo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="quote-mark">"</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">Incredible attention to detail. Our product packaging now stands out on
+                        every shelf. Highly recommended!</p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/60?img=9" alt="client">
+                        <div>
+                            <div class="font-bold text-brand-deep">Fatima Ali</div>
+                            <div class="text-sm text-gray-500">Founder, EcoNest</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="cta-bg absolute inset-0"></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-dark/90 to-brand/85 z-10 transition-theme">
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-20" data-aos="zoom-in">
+            <h2 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                Ready to Elevate Your <br class="hidden md:block">Brand Packaging?
+            </h2>
+            <p class="text-white/90 text-lg mb-10">Let's discuss your project and create something extraordinary
+                together.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact"
+                    class="magnetic-btn bg-white text-brand-dark px-8 py-4 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform inline-flex items-center gap-2">
+                    Request a Quote <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="tel:+92111333301"
+                    class="border-2 border-white/70 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition inline-flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="py-28 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-4">
+            <div data-aos="fade-right">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Let's <span class="text-brand">Talk</span> Packaging</h2>
+                <p class="text-gray-600 mb-10">Reach out for inquiries, quotes, or partnership discussions. Our team
+                    responds within 24 hours.</p>
+
+                <div class="space-y-5 mb-10">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="font-semibold text-brand-deep">Address</div>
+                            <div class="text-gray-600">18-Km Ferozpur Road, Lahore, Pakistan</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="font-semibold text-brand-deep">Phone</div>
+                            <div class="text-gray-600">+92 111 333 301 (UAN)<br>+92 42 35402021-22-23-24</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="font-semibold text-brand-deep">Email</div>
+                            <div class="text-gray-600">info@mfp.com.pk</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <form class="glass-form p-8 rounded-3xl space-y-5">
+                    <h3 class="font-display text-2xl font-bold text-brand-deep mb-2">Request a Quote</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name" class="form-input" required />
+                        <input type="email" placeholder="Your Email" class="form-input" required />
+                    </div>
+                    <input type="text" placeholder="Company Name" class="form-input" />
+                    <input type="text" placeholder="Phone Number" class="form-input" />
+                    <select class="form-input">
+                        <option>Select Service</option>
+                        <option>Offset Printing</option>
+                        <option>Roll to Roll Labels</option>
+                        <option>Flexible Packaging</option>
+                        <option>Tissue Conversion</option>
+                        <option>Plastic Packaging</option>
+                        <option>Laminated Tubes</option>
+                    </select>
+                    <textarea rows="4" placeholder="Your Message" class="form-input"></textarea>
+                    <button type="submit"
+                        class="magnetic-btn w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-xl transition shadow-lg inline-flex items-center justify-center gap-2">
+                        Send Inquiry <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-brand-deep text-gray-300 pt-16 pb-6 relative overflow-hidden transition-theme">
+        <div class="absolute top-0 left-1/3 w-96 h-96 bg-brand/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 relative z-10">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="logo-box"><span>M</span></div>
+                    <div>
+                        <div class="font-display font-extrabold text-white">Maqsood Faisal</div>
+                        <div class="text-[10px] tracking-[3px] text-gray-400">PRINTING PRESS</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed mb-4">Eco-friendly printing and packaging solutions trusted by leading
+                    brands across Pakistan.</p>
+                <div class="flex gap-3">
+                    <a href="#"
+                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
+                            class="fa-brands fa-linkedin-in text-sm"></i></a>
+                    <a href="#"
+                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
+                            class="fa-brands fa-facebook-f text-sm"></i></a>
+                    <a href="#"
+                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
+                            class="fa-brands fa-instagram text-sm"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#quality" class="footer-link">Quality</a></li>
+                    <li><a href="#clients" class="footer-link">Clients</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Our Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#services" class="footer-link">Offset Printing</a></li>
+                    <li><a href="#services" class="footer-link">Plastic Packaging</a></li>
+                    <li><a href="#services" class="footer-link">Laminated Tubes</a></li>
+                    <li><a href="#services" class="footer-link">Tissue Conversion</a></li>
+                    <li><a href="#services" class="footer-link">Flexible Packaging</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Get in Touch</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex gap-2"><i class="fa-solid fa-location-dot text-brand mt-1"></i><span>18-Km Ferozpur
+                            Road, Lahore</span></li>
+                    <li class="flex gap-2"><i class="fa-solid fa-phone text-brand mt-1"></i><span>+92 111 333 301</span>
+                    </li>
+                    <li class="flex gap-2"><i
+                            class="fa-solid fa-envelope text-brand mt-1"></i><span>info@mfp.com.pk</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 text-center text-sm relative z-10">
+            © 2024 Maqsood Faisal Printing Press. All Rights Reserved. | Crafted with <i
+                class="fa-solid fa-heart text-brand"></i>
+        </div>
+    </footer>
+
+    <button id="backTop"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-brand text-white rounded-full shadow-2xl hidden items-center justify-center hover:scale-110 transition z-50">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // ============ LOADER ============
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('loader').classList.add('hide'), 1200);
+        });
+
+        // ============ AOS ============
+        AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic' });
+
+        // ============ CUSTOM CURSOR ============
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+        });
+
+        function animateCursor() {
+            outlineX += (mouseX - outlineX) * 0.15;
+            outlineY += (mouseY - outlineY) * 0.15;
+            outline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.querySelectorAll('a, button, .tilt, .service-card').forEach(el => {
+            el.addEventListener('mouseenter', () => outline.classList.add('grow'));
+            el.addEventListener('mouseleave', () => outline.classList.remove('grow'));
+        });
+
+        // ============ SCROLL PROGRESS / NAV / BACKTOP ============
+        const progressBar = document.querySelector('.scroll-progress');
+        const navbar = document.getElementById('navbar');
+        const backTop = document.getElementById('backTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+            navbar.classList.toggle('scrolled', scrollTop > 40);
+            backTop.classList.toggle('show', scrollTop > 500);
+        });
+
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ============ MOBILE MENU ============
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(l => {
+            l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // ============ HERO SLIDER ============
+        const slides = document.querySelectorAll('.hero-bg .slide');
+        const dots = document.querySelectorAll('.dot');
+        let current = 0;
+
+        function goTo(i) {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = i;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+        dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+        setInterval(() => goTo((current + 1) % slides.length), 5500);
+
+        // ============ PARTICLES CANVAS (Theme-Aware) ============
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function hexToRgb(hex) {
+            hex = hex.replace('#', '');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            return `${r},${g},${b}`;
+        }
+
+        class Particle {
+            constructor() { this.reset(); this.y = Math.random() * canvas.height; }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + 10;
+                this.vy = Math.random() * 0.5 + 0.3;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2.5 + 1;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.vx; this.y -= this.vy;
+                if (this.y < -10) this.reset();
+            }
+            draw() {
+                const glow = getComputedStyle(document.documentElement).getPropertyValue('--brand-glow').trim();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${hexToRgb(glow)}, ${this.alpha})`;
+                ctx.fill();
+            }
+        }
+        for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ============ COUNTERS ============
+        const counters = document.querySelectorAll('.counter');
+        const counterObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.dataset.target;
+                    let count = 0;
+                    const step = target / 60;
+                    const tick = () => {
+                        count += step;
+                        if (count < target) { el.innerText = Math.ceil(count); requestAnimationFrame(tick); }
+                        else el.innerText = target;
+                    };
+                    tick();
+                    counterObs.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObs.observe(c));
+
+        // ============ CIRCULAR PROGRESS ============
+        const circles = document.querySelectorAll('.progress-circle');
+        const circleObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const wrap = entry.target;
+                    const percent = +wrap.dataset.percent;
+                    const circle = wrap.querySelector('.fg-ring');
+                    const r = 60;
+                    const circumference = 2 * Math.PI * r;
+                    circle.style.strokeDasharray = circumference;
+                    circle.style.strokeDashoffset = circumference;
+                    setTimeout(() => {
+                        circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+                    }, 300);
+                    circleObs.unobserve(wrap);
+                }
+            });
+        }, { threshold: 0.5 });
+        circles.forEach(c => circleObs.observe(c));
+
+        // ============ MAGNETIC BUTTONS ============
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+            });
+            btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+        });
+
+        // ============ 3D TILT ============
+        document.querySelectorAll('.tilt').forEach(el => {
+            el.addEventListener('mousemove', e => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rx = ((y - rect.height / 2) / rect.height) * -10;
+                const ry = ((x - rect.width / 2) / rect.width) * 10;
+                el.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // ============ SPOTLIGHT ============
+        document.querySelectorAll('.spotlight').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+                card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+            });
+        });
+
+        // ============ PROCESS LINE FILL ============
+        const processLine = document.querySelector('.process-line-fill');
+        if (processLine) {
+            const lineObs = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        processLine.style.height = '100%';
+                        lineObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            lineObs.observe(document.querySelector('.process-timeline'));
+        }
+
+        // ============ FORM SUBMIT ============
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent Successfully!';
+                btn.style.background = 'var(--brand-dark)';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    e.target.reset();
+                }, 2500);
+            });
+        }
+    </script>
+</body>
+
+</html>
