@@ -1244,3 +1244,8 @@ body {
         max-width: 130px;
     }
 }
+
+/* Netlify Badge Hide */
+#netlify-badge {
+    display: none !important;
+}
