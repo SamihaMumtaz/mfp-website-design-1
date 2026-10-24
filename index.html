@@ -7,6 +7,7 @@
     <title>Maqsood Faisal Printing Press | Premium Eco-Friendly Packaging</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link
@@ -45,11 +46,6 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div class="scroll-progress"></div>
-
-    <div id="loader">
-        <div class="loader-logo">M</div>
-        <div class="loader-bar"><span></span></div>
-    </div>
 
     <!-- ============ TOP BAR (Responsive) ============ -->
     <div
@@ -287,7 +283,7 @@
     </section>
 
     <!-- ============ QUALITY SECTION (COMPACT & LIGHT) ============ -->
-    <section id="quality" class="py-10 lg:py-14 bg-white relative overflow-hidden">
+    <section class="py-10 lg:py-14 bg-white relative overflow-hidden">
 
         <!-- Subtle Background Glow -->
         <div
@@ -367,7 +363,7 @@
     </section>
 
     <!-- ============ TRUSTED BY BRANDS (MARQUEE SLIDER) ============ -->
-    <section id="clients" class="py-16 bg-[#f8fafc] overflow-hidden border-y border-gray-100">
+    <section class="py-16 bg-[#f8fafc] overflow-hidden border-y border-gray-100">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
             <span
@@ -438,205 +434,543 @@
         </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-        <div class="deco-circle deco-1"></div>
-        <div class="deco-circle deco-2"></div>
+    <!-- ============ ABOUT SECTION (PREMIUM DESIGN) ============ -->
+    <section id="about"
+        class="py-16 lg:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
 
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center px-4 relative z-10">
-            <div data-aos="fade-right">
-                <div class="about-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1000&auto=format&fit=crop"
-                        class="w-full h-[520px] object-cover rounded-3xl" alt="About MFP" />
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-20 left-0 w-64 h-64 bg-brand-50 rounded-full blur-[80px] opacity-60"></div>
+        <div class="absolute bottom-10 right-0 w-80 h-80 bg-brand-50 rounded-full blur-[100px] opacity-40"></div>
 
-                    <div class="float-badge float-badge-1">
-                        <i class="fa-solid fa-award text-2xl text-brand mb-2"></i>
-                        <div class="text-3xl font-extrabold text-brand-deep">32+</div>
-                        <div class="text-xs text-gray-500">Years of Excellence</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <!-- LEFT SIDE: Images & Floating Badges -->
+                <div class="relative w-full max-w-lg mx-auto lg:mx-0 mt-10 lg:mt-0" data-aos="fade-right">
+                    <!-- Main Image Container -->
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-brand/20 bg-gray-200">
+                        <!-- Image -->
+                        <img src="images/about-maqsood-faisal.jpg"
+                            class="w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover object-center transform hover:scale-105 transition-transform duration-700 relative z-0"
+                            alt="About Maqsood Faisal" />
                     </div>
 
-                    <div class="float-badge float-badge-2">
+                    <!-- Floating Badge 1: Years of Excellence -->
+                    <div
+                        class="absolute -bottom-6 -left-2 sm:-left-6 z-20 bg-white p-3 sm:p-5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-bounce-slow">
+                        <div
+                            class="w-10 h-10 sm:w-14 sm:h-14 bg-brand-50 rounded-full flex items-center justify-center text-brand text-xl sm:text-2xl">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-3xl font-extrabold text-brand-deep">32+</div>
+                            <div class="text-[10px] sm:text-sm text-gray-500 font-semibold uppercase tracking-wide">
+                                Years Exp.</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2: Trusted by Brands -->
+                    <div class="absolute -top-6 -right-2 sm:-right-6 z-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-gray-100 animate-bounce-slow"
+                        style="animation-delay: 1s;">
                         <div class="flex -space-x-3 mb-2">
                             <img src="https://i.pravatar.cc/40?img=1"
-                                class="w-9 h-9 rounded-full border-2 border-white">
+                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white">
                             <img src="https://i.pravatar.cc/40?img=2"
-                                class="w-9 h-9 rounded-full border-2 border-white">
+                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white">
                             <img src="https://i.pravatar.cc/40?img=3"
-                                class="w-9 h-9 rounded-full border-2 border-white">
+                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white">
                             <div
-                                class="w-9 h-9 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center border-2 border-white">
-                                +30</div>
+                                class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-brand text-white text-[10px] sm:text-xs font-bold flex items-center justify-center border-2 border-white">
+                                +30
+                            </div>
                         </div>
-                        <div class="text-xs text-gray-600">Trusted by 33+ brands</div>
+                        <div class="text-[10px] sm:text-xs text-gray-600 font-semibold">Trusted by 33+ Brands</div>
                     </div>
                 </div>
-            </div>
 
-            <div data-aos="fade-left">
-                <span class="section-tag">About Us</span>
-                <h2 class="section-title">Trusted Partner in <span class="text-brand">Eco-Friendly</span> Printing</h2>
-                <p class="text-gray-600 mb-8 leading-relaxed">
-                    Welcome to Maqsood Faisal Printing Press — your premier partner in eco-friendly printing and
-                    packaging. With cutting-edge technology and a commitment to sustainability, we bring your visions to
-                    life with minimal environmental impact.
-                </p>
+                <!-- RIGHT SIDE: Content -->
+                <div data-aos="fade-left" class="text-center lg:text-left mt-8 lg:mt-0">
+                    <!-- Section Tag -->
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
+                        <i class="fa-solid fa-leaf"></i> About Us
+                    </span>
 
-                <ul class="grid sm:grid-cols-2 gap-4 mb-8">
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Sustainable Practices</li>
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Advanced Technology</li>
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Eco-Friendly Solutions</li>
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Innovative Packaging</li>
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Trusted by Brands</li>
-                    <li class="feature-item"><i class="fa-solid fa-check"></i> Environmentally Responsible</li>
-                </ul>
+                    <!-- Main Heading -->
+                    <h2
+                        class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight mb-6 font-display">
+                        We Are Solutions For Your <span class="text-brand">Brand Printing</span> & Packaging
+                    </h2>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="magnetic-btn btn-primary">Get in Touch <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#services" class="btn-ghost">Our Services <i
-                            class="fa-solid fa-chevron-right text-xs"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ QUALITY ============ -->
-    <section id="quality" class="py-28 bg-brand-deep text-white relative overflow-hidden transition-theme">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand rounded-full blur-[140px] animate-blob"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-light rounded-full blur-[140px] animate-blob"
-                style="animation-delay:3s"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <span class="section-tag border-brand/40 text-brand-light">Quality Assurance</span>
-                <h2 class="section-title text-white">Accelerating <span class="text-brand-light">Innovations</span> In
-                    Packaging</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Our expertise drives impactful, innovative solutions tailored
-                    to elevate brands. Quality, speed, and creativity combined.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mb-20">
-                <div class="quality-card tilt" data-aos="zoom-in">
-                    <div class="progress-circle" data-percent="95">
-                        <svg viewBox="0 0 140 140">
-                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
-                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
-                        </svg>
-                        <span class="progress-text">95%</span>
-                    </div>
-                    <h3>Quality</h3>
-                    <p>Premium packaging quality ensures durability and satisfaction.</p>
-                </div>
-
-                <div class="quality-card tilt" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="progress-circle" data-percent="93">
-                        <svg viewBox="0 0 140 140">
-                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
-                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
-                        </svg>
-                        <span class="progress-text">93%</span>
-                    </div>
-                    <h3>Sustainable</h3>
-                    <p>Eco-conscious processes that protect our environment.</p>
-                </div>
-
-                <div class="quality-card tilt" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="progress-circle" data-percent="90">
-                        <svg viewBox="0 0 140 140">
-                            <circle class="bg-ring" cx="70" cy="70" r="60"></circle>
-                            <circle class="fg-ring" cx="70" cy="70" r="60"></circle>
-                        </svg>
-                        <span class="progress-text">90%</span>
-                    </div>
-                    <h3>Design</h3>
-                    <p>Creative designs that make your packaging stand out beautifully.</p>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="mini-card" data-aos="fade-up">
-                    <div class="mini-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                    <h4>Best Quality</h4>
-                    <p>Exceptional packaging ensuring durability, appeal, and satisfaction.</p>
-                </div>
-                <div class="mini-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mini-icon"><i class="fa-solid fa-palette"></i></div>
-                    <h4>Creative Packaging</h4>
-                    <p>Unleashing unique designs that make your packaging stand out.</p>
-                </div>
-                <div class="mini-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mini-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h4>Eco Friendly</h4>
-                    <p>Sustainable packaging designed to reduce waste and protect nature.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ SERVICES ============ -->
-    <section id="services" class="py-28 bg-gray-50 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-tag">Our Services</span>
-                <h2 class="section-title">We Provide <span class="text-brand">Various Kinds</span> Of Packaging</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">From offset printing to flexible packaging — complete
-                    eco-conscious solutions for every brand.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card spotlight" data-aos="fade-up">
-                    <div class="service-bg-num">01</div>
-                    <div class="service-icon"><i class="fa-solid fa-print"></i></div>
-                    <h3>Offset Printing</h3>
-                    <p>High-volume, vibrant, and eco-friendly printing solutions ensuring sharp, professional results.
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm sm:text-lg leading-relaxed mb-8">
+                        Welcome to Maqsood Faisal Printing Press, Your Premier Partner in Eco-Friendly Printing and
+                        Packaging Solutions. With cutting-edge technology and a commitment to sustainability, we bring
+                        your visions to life with minimal environmental impact. Discover our wide range of services and
+                        join leading brands in trusting us for eco-conscious packaging needs.
                     </p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+
+                    <!-- Features Grid: Yahan grid-cols-2 laga diya hai taake mobile par 2x2 ho jayein -->
+                    <div class="grid grid-cols-2 gap-x-2 sm:gap-x-6 gap-y-4 mb-10 text-left">
+
+                        <!-- Item 1 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Sustainable
+                                Practices</span>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Advanced
+                                Technology</span>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span
+                                class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Eco-Friendly
+                                Solutions</span>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Trusted by
+                                Brands</span>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Innovative
+                                Packaging</span>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="flex items-start sm:items-center gap-2 group">
+                            <div
+                                class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors duration-300 flex-shrink-0 mt-0.5 sm:mt-0">
+                                <i class="fa-solid fa-check text-[10px] sm:text-xs"></i>
+                            </div>
+                            <span
+                                class="text-gray-700 font-semibold text-[11px] sm:text-base leading-tight">Environmentally
+                                Responsible</span>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-row justify-center lg:justify-start gap-3 w-full">
+                        <a href="#contact"
+                            class="flex-1 sm:flex-none inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white px-4 sm:px-8 py-3 rounded-full font-bold shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300 text-xs sm:text-base whitespace-nowrap">
+                            Get in Touch <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+
+                        <a href="#services"
+                            class="flex-1 sm:flex-none inline-flex items-center justify-center bg-transparent border-2 border-gray-200 hover:border-brand hover:text-brand text-brand-deep px-4 sm:px-8 py-3 rounded-full font-bold transition-all duration-300 text-xs sm:text-base whitespace-nowrap">
+                            Our Services <i class="fa-solid fa-layer-group ml-1"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-bg-num">02</div>
-                    <div class="service-icon"><i class="fa-solid fa-tags"></i></div>
-                    <h3>Roll to Roll Labels</h3>
-                    <p>Speedy, accurate, and customizable eco-conscious labels for high-speed production.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-bg-num">03</div>
-                    <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-                    <h3>Flexible Packaging</h3>
-                    <p>Durable, lightweight, and environmentally-friendly packaging options for all industries.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card spotlight" data-aos="fade-up">
-                    <div class="service-bg-num">04</div>
-                    <div class="service-icon"><i class="fa-solid fa-scroll"></i></div>
-                    <h3>Tissue Conversion</h3>
-                    <p>Eco-sensitive tissue products balancing softness and strength for premium use.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-bg-num">05</div>
-                    <div class="service-icon"><i class="fa-solid fa-bottle-water"></i></div>
-                    <h3>Plastic Packaging</h3>
-                    <p>Cost-effective, robust, and sustainable plastic packaging solutions for every need.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="service-card spotlight" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-bg-num">06</div>
-                    <div class="service-icon"><i class="fa-solid fa-tube"></i></div>
-                    <h3>Laminated Tubes</h3>
-                    <p>Aesthetic and functional tubes for various industries with sustainability emphasis.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- ============ SERVICES SECTION (SLIDER ON MOBILE, GRID ON DESKTOP) ============ -->
+    <section id="services" class="py-20 lg:py-28 bg-[#0B1120] relative overflow-hidden">
+
+        <!-- Background Glow -->
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-light/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Section Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-20" data-aos="fade-up">
+                <span
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-light text-xs font-bold tracking-widest uppercase mb-4">
+                    <i class="fa-solid fa-box-open"></i> Our Expertise
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display leading-tight mb-4">
+                    We Provide <span class="text-brand">Various Kinds</span> Of Packaging
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg">
+                    Our services are Offset Printing, Roll to Roll Labels Printing, Flexible Packaging, Tissue
+                    Conversion, Plastic Packaging, Laminated Plastic Tubes.
+                </p>
+            </div>
+
+            <!-- DESKTOP LAYOUT (Hidden on Mobile) -->
+            <div class="hidden md:flex flex-col gap-16 lg:gap-24">
+
+                <!-- Desktop Service 1 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-right">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/plastic-packing.png" alt="Plastic Packaging"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">01 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Plastic Packaging</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">Cost-effective, robust, and
+                            sustainable plastic packaging solutions. We use high-grade materials to ensure your products
+                            are safe and beautifully presented.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Service 2 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-left">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500 md:order-2">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/tissue-conversion.png" alt="Tissue Conversion"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left md:order-1">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">02 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Tissue Conversion</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">Eco-sensitive tissue products
+                            balancing softness and strength. Our premium tissues are perfect for high-end consumer
+                            products.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Service 3 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-right">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/offset-printing-2.png" alt="Offset Printing"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">03 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Offset Printing</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">High-volume, vibrant, and
+                            eco-friendly printing solutions. We guarantee sharp images, brilliant colors, and
+                            professional results on every run.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Service 4 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-left">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500 md:order-2">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/roll-to-roll-2.png" alt="Roll to Roll Labels"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left md:order-1">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">04 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Roll to Roll Labels Printing</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">Speedy, accurate, and
+                            customizable eco-conscious labels. Ideal for high-speed production and diverse industry
+                            needs.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Service 5 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-right">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/laminated-tube-2.png" alt="Laminated Plastic Tubes"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">05 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Laminated Plastic Tubes</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">Aesthetic and functional
+                            tubes for various industries. With an emphasis on sustainability, we deliver tubes that
+                            protect and impress.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Service 6 -->
+                <div class="group grid md:grid-cols-2 gap-8 lg:gap-16 items-center" data-aos="fade-left">
+                    <a href="#contact"
+                        class="block relative rounded-3xl p-2 bg-white/5 border border-white/10 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.3)] hover:border-brand/40 transition-all duration-500 md:order-2">
+                        <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                            <img src="images/flexible-printing-2.jpg" alt="Flexible Packaging"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute bottom-4 right-4 w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                                <i
+                                    class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="text-center md:text-left md:order-1">
+                        <div class="text-brand font-mono font-bold text-lg mb-2">06 /</div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-brand transition-colors duration-300">
+                            Flexible Packaging</h3>
+                        <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">Durable, lightweight, and
+                            environmentally-friendly packaging options. Perfect for brands looking to reduce their
+                            carbon footprint.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 text-white font-semibold border-b border-transparent group-hover:border-brand transition-all pb-1">
+                            Explore Service <i class="fa-solid fa-arrow-up-right-from-square text-sm text-brand"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MOBILE LAYOUT (Slider - Hidden on Desktop) -->
+            <div class="block md:hidden relative px-2">
+                <!-- Swiper Container -->
+                <div class="swiper servicesSwiper pb-14">
+                    <div class="swiper-wrapper">
+
+                        <!-- Mobile Slide 1 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/plastic-packing.png" alt="Plastic Packaging"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">01 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Plastic Packaging</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Cost-effective, robust, and
+                                        sustainable plastic packaging solutions. We use high-grade materials to ensure
+                                        your products are safe.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Slide 2 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/tissue-conversion.png" alt="Tissue Conversion"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">02 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Tissue Conversion</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Eco-sensitive tissue products
+                                        balancing softness and strength. Our premium tissues are perfect for high-end
+                                        consumer products.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Slide 3 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/offset-printing-2.png" alt="Offset Printing"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">03 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Offset Printing</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">High-volume, vibrant, and
+                                        eco-friendly printing solutions. We guarantee sharp images, brilliant colors,
+                                        and professional results.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Slide 4 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/roll-to-roll-2.png" alt="Roll to Roll Labels"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">04 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Roll to Roll Labels</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Speedy, accurate, and customizable
+                                        eco-conscious labels. Ideal for high-speed production and diverse industry
+                                        needs.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Slide 5 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/laminated-tube-2.png" alt="Laminated Plastic Tubes"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">05 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Laminated Plastic Tubes</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Aesthetic and functional tubes for
+                                        various industries. With an emphasis on sustainability, we deliver tubes that
+                                        protect and impress.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Slide 6 -->
+                        <div class="swiper-slide">
+                            <a href="#contact" class="block relative rounded-3xl p-2 bg-white/5 border border-white/10">
+                                <div class="relative rounded-2xl overflow-hidden h-[250px]">
+                                    <img src="images/flexible-printing-2.jpg" alt="Flexible Packaging"
+                                        class="w-full h-full object-cover" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+                                    </div>
+                                </div>
+                                <div class="text-left pt-4 pb-2 px-2">
+                                    <div class="text-brand font-mono font-bold text-sm mb-1">06 /</div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Flexible Packaging</h3>
+                                    <p class="text-gray-400 text-xs leading-relaxed">Durable, lightweight, and
+                                        environmentally-friendly packaging options. Perfect for brands looking to reduce
+                                        their carbon footprint.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Pagination Dots -->
+                    <div class="swiper-pagination !-bottom-8"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Swiper Pagination Custom Color CSS -->
+    <style>
+        .swiper-pagination-bullet {
+            background: #4B5563;
+            opacity: 1;
+            width: 8px;
+            height: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #10B981;
+            /* Brand Green */
+            width: 24px;
+            border-radius: 4px;
+        }
+    </style>
 
     <!-- ============ PROCESS ============ -->
     <section class="py-28 bg-white relative overflow-hidden">
@@ -692,137 +1026,182 @@
         </div>
     </section>
 
-    <!-- ============ CLIENTS ============ -->
-    <section id="clients" class="py-28 bg-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-14" data-aos="fade-up">
-                <span class="section-tag">Trusted By</span>
-                <h2 class="section-title">Leading <span class="text-brand">Brands</span> Trust Us</h2>
-                <p class="text-gray-600">We proudly serve some of the most recognized brands across Pakistan.</p>
+    <!-- ============ QUALITY SECTION (PREMIUM DESIGN) ============ -->
+    <section id="quality" class="py-20 lg:py-28 bg-brand-deep text-white relative overflow-hidden">
+
+        <!-- Background Glow Effects -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand rounded-full blur-[140px] animate-blob">
             </div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-light rounded-full blur-[140px] animate-blob"
+                style="animation-delay:3s"></div>
         </div>
 
-        <div class="marquee mb-6">
-            <div class="marquee-track brand-track">
-                <div class="brand-logo"><i class="fa-solid fa-bolt"></i> BrandOne</div>
-                <div class="brand-logo"><i class="fa-solid fa-cube"></i> BrandTwo</div>
-                <div class="brand-logo"><i class="fa-solid fa-leaf"></i> GreenCo</div>
-                <div class="brand-logo"><i class="fa-solid fa-star"></i> StarPack</div>
-                <div class="brand-logo"><i class="fa-solid fa-fire"></i> Ignite</div>
-                <div class="brand-logo"><i class="fa-solid fa-diamond"></i> LuxeBrand</div>
-                <div class="brand-logo"><i class="fa-solid fa-seedling"></i> EcoNest</div>
-                <div class="brand-logo"><i class="fa-solid fa-bolt"></i> BrandOne</div>
-                <div class="brand-logo"><i class="fa-solid fa-cube"></i> BrandTwo</div>
-                <div class="brand-logo"><i class="fa-solid fa-leaf"></i> GreenCo</div>
-                <div class="brand-logo"><i class="fa-solid fa-star"></i> StarPack</div>
-                <div class="brand-logo"><i class="fa-solid fa-fire"></i> Ignite</div>
-                <div class="brand-logo"><i class="fa-solid fa-diamond"></i> LuxeBrand</div>
-                <div class="brand-logo"><i class="fa-solid fa-seedling"></i> EcoNest</div>
-            </div>
-        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div class="marquee">
-            <div class="marquee-track brand-track-reverse">
-                <div class="brand-logo"><i class="fa-solid fa-crown"></i> RoyalPack</div>
-                <div class="brand-logo"><i class="fa-solid fa-gem"></i> EliteCo</div>
-                <div class="brand-logo"><i class="fa-solid fa-rocket"></i> NovaBrand</div>
-                <div class="brand-logo"><i class="fa-solid fa-feather"></i> Feather</div>
-                <div class="brand-logo"><i class="fa-solid fa-hexagon-nodes"></i> Hexa</div>
-                <div class="brand-logo"><i class="fa-solid fa-infinity"></i> Infinite</div>
-                <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i> ShieldCo</div>
-                <div class="brand-logo"><i class="fa-solid fa-crown"></i> RoyalPack</div>
-                <div class="brand-logo"><i class="fa-solid fa-gem"></i> EliteCo</div>
-                <div class="brand-logo"><i class="fa-solid fa-rocket"></i> NovaBrand</div>
-                <div class="brand-logo"><i class="fa-solid fa-feather"></i> Feather</div>
-                <div class="brand-logo"><i class="fa-solid fa-hexagon-nodes"></i> Hexa</div>
-                <div class="brand-logo"><i class="fa-solid fa-infinity"></i> Infinite</div>
-                <div class="brand-logo"><i class="fa-solid fa-shield-halved"></i> ShieldCo</div>
+                <!-- LEFT SIDE: Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1" data-aos="fade-right">
+
+                    <!-- Main Heading -->
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6 font-display">
+                        Accelerating <span class="text-brand-light">Innovations</span> In Packaging
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-10">
+                        Our expertise in printing and packaging drives impactful, innovative solutions tailored to
+                        elevate brands. We combine quality, speed, and creativity to meet evolving packaging needs.
+                    </p>
+
+                    <!-- 3 Features List -->
+                    <div class="space-y-6">
+
+                        <!-- Feature 1 -->
+                        <div
+                            class="flex items-start gap-4 group bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-transparent flex items-center justify-center text-brand-light flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <!-- Minimalist Outline Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-lg font-bold text-white mb-1 group-hover:text-brand-light transition-colors">
+                                    Best Quality Of Packaging</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Exceptional packaging quality ensures
+                                    durability, appeal, and customer satisfaction.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div
+                            class="flex items-start gap-4 group bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-transparent flex items-center justify-center text-brand-light flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <!-- Minimalist Outline Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <path d="M12 22V12"></path>
+                                    <path d="M7 12h10"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-lg font-bold text-white mb-1 group-hover:text-brand-light transition-colors">
+                                    Creative Packaging</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Unleashing unique designs that make
+                                    your packaging stand out beautifully.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div
+                            class="flex items-start gap-4 group bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-transparent flex items-center justify-center text-brand-light flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <!-- Minimalist Outline Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                    </path>
+                                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-lg font-bold text-white mb-1 group-hover:text-brand-light transition-colors">
+                                    Environmentally Friendly</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Sustainable packaging solutions
+                                    designed to reduce waste and protect nature.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Image -->
+                <div class="relative order-1 lg:order-2" data-aos="fade-left">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-brand/20 border border-white/10">
+                        <img src="images/quality.png" alt="Quality Packaging"
+                            class="w-full h-[350px] sm:h-[450px] lg:h-[550px] object-cover object-center" />
+
+                        <!-- Image Overlay -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-brand-deep/80 via-transparent to-transparent">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============ -->
-    <section class="py-28 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-tag">Testimonials</span>
-                <h2 class="section-title">What Our <span class="text-brand">Clients Say</span></h2>
-            </div>
+    <!-- ============ PREMIUM CTA SECTION ============ -->
+    <section class="relative py-24 lg:py-32 overflow-hidden">
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="testimonial-card" data-aos="fade-up">
-                    <div class="quote-mark">"</div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">MFP's packaging quality and turnaround time are unmatched. They've
-                        become an integral part of our brand identity.</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?img=5" alt="client">
-                        <div>
-                            <div class="font-bold text-brand-deep">Ayesha Khan</div>
-                            <div class="text-sm text-gray-500">Brand Manager, LuxeBrand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card featured" data-aos="fade-up" data-aos-delay="100">
-                    <div class="quote-mark">"</div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">From design consultation to delivery, everything was seamless. Their
-                        eco-friendly approach aligns perfectly with our values.</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?img=8" alt="client">
-                        <div>
-                            <div class="font-bold text-brand-deep">Hassan Raza</div>
-                            <div class="text-sm text-gray-500">CEO, GreenCo</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="quote-mark">"</div>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">Incredible attention to detail. Our product packaging now stands out on
-                        every shelf. Highly recommended!</p>
-                    <div class="testimonial-author">
-                        <img src="https://i.pravatar.cc/60?img=9" alt="client">
-                        <div>
-                            <div class="font-bold text-brand-deep">Fatima Ali</div>
-                            <div class="text-sm text-gray-500">Founder, EcoNest</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="cta-bg absolute inset-0"></div>
-        <div
-            class="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-dark/90 to-brand/85 z-10 transition-theme">
+        <!-- Background Image with Fixed Parallax Effect -->
+        <div class="absolute inset-0 bg-[url('../images/cta.jpg')] bg-cover bg-center bg-fixed">
         </div>
 
-        <div class="max-w-4xl mx-auto text-center px-4 relative z-20" data-aos="zoom-in">
-            <h2 class="font-display text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        <!-- Premium Dark Gradient Overlay (Yeh text ko readable banata hai) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-deep via-brand-deep/90 to-brand-deep/80"></div>
+
+        <!-- Subtle Green Glow Orbs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-light/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="zoom-in">
+
+            <!-- Small Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-brand-light text-xs sm:text-sm font-bold tracking-widest uppercase mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                Let's Work Together
+            </div>
+
+            <!-- Main Heading -->
+            <h2
+                class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
                 Ready to Elevate Your <br class="hidden md:block">Brand Packaging?
             </h2>
-            <p class="text-white/90 text-lg mb-10">Let's discuss your project and create something extraordinary
-                together.</p>
-            <div class="flex flex-wrap justify-center gap-4">
+
+            <!-- Description -->
+            <p class="text-gray-300 text-base sm:text-lg md:text-xl mb-10 max-w-2xl mx-auto drop-shadow-md">
+                Let's discuss your project and create something extraordinary together. Our team is ready to bring your
+                vision to life.
+            </p>
+
+            <!-- Buttons Container -->
+            <div class="flex flex-row justify-center items-center gap-3 sm:gap-4 w-full max-w-md mx-auto">
+
+                <!-- Primary Button (White) -->
                 <a href="#contact"
-                    class="magnetic-btn bg-white text-brand-dark px-8 py-4 rounded-full font-bold shadow-2xl hover:scale-105 transition-transform inline-flex items-center gap-2">
+                    class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-white text-brand-deep hover:bg-brand hover:text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all duration-300 text-xs sm:text-base whitespace-nowrap">
                     Request a Quote <i class="fa-solid fa-arrow-right"></i>
                 </a>
+
+                <!-- Secondary Button (Glassmorphism) -->
                 <a href="tel:+92111333301"
-                    class="border-2 border-white/70 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition inline-flex items-center gap-2">
+                    class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:-translate-y-1 transition-all duration-300 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-base whitespace-nowrap">
                     <i class="fa-solid fa-phone"></i> Call Now
                 </a>
+
             </div>
         </div>
     </section>
@@ -896,72 +1275,218 @@
         </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="bg-brand-deep text-gray-300 pt-16 pb-6 relative overflow-hidden transition-theme">
-        <div class="absolute top-0 left-1/3 w-96 h-96 bg-brand/10 rounded-full blur-[120px]"></div>
+    <!-- ============ PREMIUM FOOTER ============ -->
+    <footer class="bg-[#0B1120] text-gray-300 pt-16 pb-6 relative overflow-hidden font-body">
 
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 relative z-10">
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="logo-box"><span>M</span></div>
-                    <div>
-                        <div class="font-display font-extrabold text-white">Maqsood Faisal</div>
-                        <div class="text-[10px] tracking-[3px] text-gray-400">PRINTING PRESS</div>
-                    </div>
-                </div>
-                <p class="text-sm leading-relaxed mb-4">Eco-friendly printing and packaging solutions trusted by leading
-                    brands across Pakistan.</p>
-                <div class="flex gap-3">
-                    <a href="#"
-                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
-                            class="fa-brands fa-linkedin-in text-sm"></i></a>
-                    <a href="#"
-                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
-                            class="fa-brands fa-facebook-f text-sm"></i></a>
-                    <a href="#"
-                        class="w-9 h-9 bg-white/10 hover:bg-brand rounded-full flex items-center justify-center transition"><i
-                            class="fa-brands fa-instagram text-sm"></i></a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#home" class="footer-link">Home</a></li>
-                    <li><a href="#about" class="footer-link">About Us</a></li>
-                    <li><a href="#quality" class="footer-link">Quality</a></li>
-                    <li><a href="#clients" class="footer-link">Clients</a></li>
-                    <li><a href="#contact" class="footer-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4">Our Services</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#services" class="footer-link">Offset Printing</a></li>
-                    <li><a href="#services" class="footer-link">Plastic Packaging</a></li>
-                    <li><a href="#services" class="footer-link">Laminated Tubes</a></li>
-                    <li><a href="#services" class="footer-link">Tissue Conversion</a></li>
-                    <li><a href="#services" class="footer-link">Flexible Packaging</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4">Get in Touch</h4>
-                <ul class="space-y-3 text-sm">
-                    <li class="flex gap-2"><i class="fa-solid fa-location-dot text-brand mt-1"></i><span>18-Km Ferozpur
-                            Road, Lahore</span></li>
-                    <li class="flex gap-2"><i class="fa-solid fa-phone text-brand mt-1"></i><span>+92 111 333 301</span>
-                    </li>
-                    <li class="flex gap-2"><i
-                            class="fa-solid fa-envelope text-brand mt-1"></i><span>info@mfp.com.pk</span></li>
-                </ul>
-            </div>
+        <!-- Background Glows -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-light/5 rounded-full blur-[100px] pointer-events-none">
         </div>
 
-        <div class="border-t border-white/10 pt-6 text-center text-sm relative z-10">
-            © 2024 Maqsood Faisal Printing Press. All Rights Reserved. | Crafted with <i
-                class="fa-solid fa-heart text-brand"></i>
+        <!-- Top Border Accent -->
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-50">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Main Footer Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
+
+                <!-- Column 1: Logo & About (Span 4) -->
+                <div class="lg:col-span-4">
+                    <!-- Logo Image -->
+                    <a href="#home" class="inline-block mb-5 group">
+                        <img src="images/logo.png" alt="Maqsood Faisal Printing Press"
+                            class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert" />
+                    </a>
+
+                    <p class="text-sm leading-relaxed mb-6 text-gray-400 pr-4">
+                        Your premier partner in eco-friendly printing and packaging solutions. We bring your visions to
+                        life with cutting-edge technology and minimal environmental impact.
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-brand hover:border-brand rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook"
+                            class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-brand hover:border-brand rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram"
+                            class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-brand hover:border-brand rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="WhatsApp"
+                            class="w-10 h-10 bg-white/5 border border-white/10 hover:bg-brand hover:border-brand rounded-full flex items-center justify-center text-white transition-all duration-300 hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Wrapper for Quick Links & Services (Row on Mobile) -->
+                <div class="col-span-1 md:col-span-1 lg:col-span-5 grid grid-cols-2 gap-4 sm:gap-8">
+
+                    <!-- Column 2: Quick Links -->
+                    <div>
+                        <h4 class="text-white font-bold text-base sm:text-lg mb-5 relative inline-block">
+                            Quick Links
+                            <span class="absolute -bottom-1 left-0 w-8 h-0.5 bg-brand rounded-full"></span>
+                        </h4>
+                        <ul class="space-y-3 text-sm">
+                            <li>
+                                <a href="#home"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-house text-[10px] text-brand"></i>
+                                    <span
+                                        class="group-hover:translate-x-1 transition-transform duration-300">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-circle-info text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">About
+                                        Us</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-gears text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Our
+                                        Services</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#quality"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-award text-[10px] text-brand"></i>
+                                    <span
+                                        class="group-hover:translate-x-1 transition-transform duration-300">Quality</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-envelope text-[10px] text-brand"></i>
+                                    <span
+                                        class="group-hover:translate-x-1 transition-transform duration-300">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Services -->
+                    <div>
+                        <h4 class="text-white font-bold text-base sm:text-lg mb-5 relative inline-block">
+                            Our Services
+                            <span class="absolute -bottom-1 left-0 w-8 h-0.5 bg-brand rounded-full"></span>
+                        </h4>
+                        <ul class="space-y-3 text-sm">
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-print text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Offset
+                                        Printing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-box-open text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Flexible
+                                        Packaging</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-tags text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Roll to
+                                        Roll</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <i class="fa-solid fa-bottle-water text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Plastic
+                                        Packing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#services"
+                                    class="group flex items-center gap-2 hover:text-brand transition-colors duration-300">
+                                    <!-- Yahan Icon Fix Kiya Gaya Hai (fa-scroll use kiya hai) -->
+                                    <i class="fa-solid fa-scroll text-[10px] text-brand"></i>
+                                    <span class="group-hover:translate-x-1 transition-transform duration-300">Laminated
+                                        Tubes</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Column 4: Contact & Newsletter (Span 3) -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-bold text-base sm:text-lg mb-5 relative inline-block">
+                        Get In Touch
+                        <span class="absolute -bottom-1 left-0 w-8 h-0.5 bg-brand rounded-full"></span>
+                    </h4>
+
+                    <ul class="space-y-4 text-sm mb-6">
+                        <li class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-brand text-xs"></i>
+                            </div>
+                            <span class="text-gray-400 leading-relaxed">18-Km Ferozpur Road,<br>Lahore, Pakistan</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone text-brand text-xs"></i>
+                            </div>
+                            <a href="tel:+92111333301" class="text-gray-400 hover:text-brand transition-colors">+92 111
+                                333 301</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-brand text-xs"></i>
+                            </div>
+                            <a href="mailto:info@mfp.com.pk"
+                                class="text-gray-400 hover:text-brand transition-colors">info@mfp.com.pk</a>
+                        </li>
+                    </ul>
+
+                    <!-- Newsletter Form -->
+                    <form class="relative mt-2">
+                        <input type="email" placeholder="Your Email Address"
+                            class="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-4 pr-12 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand transition-colors">
+                        <button type="submit"
+                            class="absolute right-1 top-1 w-9 h-9 bg-brand hover:bg-brand-dark rounded-full flex items-center justify-center text-white transition-colors">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs sm:text-sm text-gray-500 relative z-10 text-center md:text-left">
+                <p>© 2024 <span class="text-white font-semibold">Maqsood Faisal Printing Press</span>. All Rights
+                    Reserved.</p>
+                <p class="flex items-center justify-center gap-1">
+                    Crafted with <i class="fa-solid fa-heart text-brand animate-pulse"></i> for your brand
+                </p>
+            </div>
+
         </div>
     </footer>
 
@@ -970,10 +1495,46 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- External JS -->
+    <!-- Swiper JS (Yeh script.js se pehle aana chahiye) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Aapki khud ki script file -->
     <script src="js/script.js"></script>
+
+    <!-- Swiper Initialization (Yeh sab se aakhir mein) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1. Services Mobile Slider
+            if (document.querySelector(".servicesSwiper")) {
+                var swiper = new Swiper(".servicesSwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    speed: 800,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 1.2,
+                            spaceBetween: 20,
+                        }
+                    }
+                });
+            }
+
+        });
+    </script>
 </body>
 
 </html>
